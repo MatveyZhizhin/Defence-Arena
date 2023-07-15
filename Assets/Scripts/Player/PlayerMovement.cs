@@ -8,6 +8,7 @@ namespace Assets.Scripts.Player
     {
         [SerializeField] private float speed;
         private Rigidbody playerRigidbody;
+        [SerializeField] private Joystick joystick;
 
         private void Awake()
         {
@@ -21,10 +22,10 @@ namespace Assets.Scripts.Player
 
         private void Move()
         {
-            var movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+            var movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
 
-           playerRigidbody.AddForce(movement * speed);
-           transform.LookAt(movement + transform.position);
+            playerRigidbody.velocity = movement * speed;
+            transform.LookAt(movement + transform.position);
         }
     }
 }
