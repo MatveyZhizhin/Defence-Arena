@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class PlayerMovement : MonoBehaviour
+    public class Player : MonoBehaviour
     {
         [SerializeField] private float speed;
         private Rigidbody playerRigidbody;
