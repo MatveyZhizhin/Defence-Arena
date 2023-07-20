@@ -465,31 +465,14 @@ GameObject:
   - component: {fileID: 885163036}
   - component: {fileID: 885163035}
   - component: {fileID: 885163034}
-  - component: {fileID: 885163033}
+  - component: {fileID: 885163039}
   m_Layer: 0
-  m_Name: Shooter
+  m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &885163033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 885163032}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 890cff8d47c2f964cb3b5f4485f8a5c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  attackRadius: 9.69
-  bullet: {fileID: 8745343239661342078, guid: 0ddfcea8a4fdb5a49aa01aafb712f487, type: 3}
-  firePoint: {fileID: 1421731820}
-  fireRate: 0.5
 --- !u!54 &885163034
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -606,6 +589,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &885163039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885163032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 890cff8d47c2f964cb3b5f4485f8a5c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 7
+  damage: 0
+  minDistance: 2.5
+  maxDistance: 0
+  bullet: {fileID: 0}
+  firePoint: {fileID: 0}
+  fireRate: 0
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2db09b3b47cabe44b1864d8ed134b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
   joystick: {fileID: 42577799}
 --- !u!1 &1546197174
 GameObject:
