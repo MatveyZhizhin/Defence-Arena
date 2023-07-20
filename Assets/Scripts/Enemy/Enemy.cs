@@ -6,12 +6,12 @@ namespace Assets.Scripts.Enemy
 {
     public abstract class Enemy : MonoBehaviour
     {
-        private _Player _player;
+        protected _Player _player;
 
         [SerializeField] private float speed;
-        [SerializeField] protected float damage;
         [SerializeField] protected float minDistance;
         [SerializeField] protected float attackDistance;
+
         protected float currentDistance;
 
         private bool isAttacking;
@@ -59,6 +59,6 @@ namespace Assets.Scripts.Enemy
             Gizmos.DrawWireSphere(transform.position, minDistance);
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackDistance);
-        }
+        }      
     }
 }

@@ -2,10 +2,11 @@
 using Assets.Scripts.Player;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy.Shooter
+namespace Assets.Scripts.Bullet
 {
-    public class EnemyBullet : MonoBehaviour
+    public class _Bullet : MonoBehaviour
     {
+        [SerializeField] private float damage;
         [SerializeField] private float speed;
         [SerializeField] private float lifeTime;
         [SerializeField] private float distance;
@@ -24,9 +25,9 @@ namespace Assets.Scripts.Enemy.Shooter
             {                
                 if (hitInfo.collider != null)
                 {
-                    if (hitInfo.collider.TryGetComponent(out _Player player))
+                    if (hitInfo.collider.TryGetComponent(out IAttackable obj))
                     {
-                        Destroy(hitInfo.collider.gameObject);
+                        hitInfo.collider.GetComponent<IAttackable>().TakeDamage(damage);
                     }
                     Destroy(gameObject);
                 }               

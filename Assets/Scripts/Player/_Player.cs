@@ -1,15 +1,17 @@
-
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class _Player : MonoBehaviour
+    public class _Player : MonoBehaviour, IAttackable
     {
         [SerializeField] private float speed;
-        private Rigidbody playerRigidbody;
-        [SerializeField] private Joystick joystick;
+        [SerializeField] private float health;
 
+        private Rigidbody playerRigidbody;
+        [SerializeField] private Joystick joystick;     
+        
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
@@ -19,6 +21,17 @@ namespace Assets.Scripts.Player
         {
             Move();
         }
+
+        public void TakeDamage(float damage)
+        {
+            if (health <= 0)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+            health -= damage;
+        }
+
 
         private void Move()
         {

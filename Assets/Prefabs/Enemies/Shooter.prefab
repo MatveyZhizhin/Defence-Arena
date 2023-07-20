@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  damage: 1
+  health: 0
   minDistance: 5.5
   attackDistance: 14.81
-  bullet: {fileID: 4381916301516679628, guid: 0ddfcea8a4fdb5a49aa01aafb712f487, type: 3}
+  bullet: {fileID: 4381916301516679628, guid: f32e17cc31d692f49b69f1cc6f6d7da4, type: 3}
   firePoint: {fileID: 3150571667523523314}
   fireRate: 0.5

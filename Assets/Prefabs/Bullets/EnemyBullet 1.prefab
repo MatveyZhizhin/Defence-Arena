@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7341729150799486739}
   - component: {fileID: 4381916301516679628}
   m_Layer: 0
-  m_Name: EnemyBullet
+  m_Name: EnemyBullet 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8193764828225882704
 MeshFilter:
@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30531d54263d0cc47b20248b9e17cfdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
   speed: 30
   lifeTime: 5
   distance: 0.5
