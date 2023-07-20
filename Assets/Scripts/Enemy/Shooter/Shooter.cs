@@ -9,21 +9,14 @@ namespace Assets.Scripts.Enemy.Shooter
         [SerializeField] private EnemyBullet bullet;
         [SerializeField] private Transform firePoint;
         [SerializeField] private float fireRate;
-        //private bool isShooting;
-        
-        protected override void Attack()
-        {
-            
-        }
 
-        IEnumerator Fire()
+        protected override IEnumerator Attack()
         {
-            //isShooting = true;
             while (true)
-            {
-                yield return new WaitForSeconds(fireRate);
+            {                
                 Instantiate(bullet, firePoint.position, transform.rotation);
-            }           
+                yield return new WaitForSeconds(fireRate);
+            }
         }
     }
 }

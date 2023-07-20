@@ -485,8 +485,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 890cff8d47c2f964cb3b5f4485f8a5c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 7
   damage: 1
-  attackRadius: 9.69
+  minDistance: 5.5
+  attackDistance: 14.81
   bullet: {fileID: 8745343239661342078, guid: 0ddfcea8a4fdb5a49aa01aafb712f487, type: 3}
   firePoint: {fileID: 1421731820}
   fireRate: 0.5
@@ -598,7 +600,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885163032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8, y: 2.04, z: 0}
+  m_LocalPosition: {x: -8, y: 2.04, z: -17.78}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -692,7 +694,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
-  m_LocalPosition: {x: 0, y: 18.29, z: 0}
+  m_LocalPosition: {x: 0, y: 34.76, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1018,7 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2db09b3b47cabe44b1864d8ed134b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 10
   joystick: {fileID: 42577799}
 --- !u!1 &1546197174
 GameObject:

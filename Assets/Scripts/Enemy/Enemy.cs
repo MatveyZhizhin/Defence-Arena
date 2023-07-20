@@ -1,24 +1,23 @@
-
+using System.Collections;
 using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    [RequireComponent(typeof(Rigidbody))]
     public abstract class Enemy : MonoBehaviour
     {
-        private Rigidbody _rigidbody;
         private _Player _player;
 
         [SerializeField] private float speed;
         [SerializeField] protected float damage;
         [SerializeField] protected float minDistance;
-        [SerializeField] protected float maxDistance;
+        [SerializeField] protected float attackDistance;
         protected float currentDistance;
+
+        private bool isAttacking;
 
         private void Awake()
         {
-            _rigidbody = GetComponent<Rigidbody>();
             _player = FindObjectOfType<_Player>();
         }
 
@@ -27,7 +26,7 @@ namespace Assets.Scripts.Enemy
             Move();
         }
 
-        protected abstract void Attack();
+        protected abstract IEnumerator Attack();
 
         private void Move()
         {
@@ -36,14 +35,30 @@ namespace Assets.Scripts.Enemy
             {
                 transform.LookAt(_player.transform.position);
                 transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, speed * Time.deltaTime);
-            }            
+            }
+
+            if (currentDistance < attackDistance)
+            {                
+
+                if (!isAttacking)
+                {
+                    StartCoroutine(Attack());
+                    isAttacking = true;
+                }                                          
+            }
+            else
+            {
+                StopAllCoroutines();
+                isAttacking = false;
+            }                   
         }
 
         private void OnDrawGizmosSelected()
         {
-            Gizmos.color = Color.yellow;
-            Gizmos.DrawWireSphere(transform.position, maxDistance);
+            Gizmos.color = Color.yellow;            
             Gizmos.DrawWireSphere(transform.position, minDistance);
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, attackDistance);
         }
     }
 }
