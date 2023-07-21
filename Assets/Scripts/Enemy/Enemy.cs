@@ -4,14 +4,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    public abstract class Enemy : MonoBehaviour
+    public abstract class Enemy : MonoBehaviour, IAttackable
     {
         protected _Player _player;
 
         [SerializeField] private float speed;
+        [SerializeField] private float health;
+
         [SerializeField] protected float minDistance;
         [SerializeField] protected float attackDistance;
         [SerializeField] protected float attackRate;
+
 
         protected float currentDistance;
 
@@ -28,6 +31,16 @@ namespace Assets.Scripts.Enemy
         }
 
         protected abstract IEnumerator Attack();
+
+        public void TakeDamage(float damage)
+        {          
+            health -= damage;
+
+            if (health <= 0)
+            {
+                Destroy(gameObject);
+            }
+        }
 
         private void Move()
         {
@@ -60,6 +73,6 @@ namespace Assets.Scripts.Enemy
             Gizmos.DrawWireSphere(transform.position, minDistance);
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackDistance);
-        }      
+        }       
     }
 }
