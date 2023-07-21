@@ -255,6 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  damage: 1
   minDistance: 2.5
   attackDistance: 5.5
+  attackRate: 0.5
+  damage: 1

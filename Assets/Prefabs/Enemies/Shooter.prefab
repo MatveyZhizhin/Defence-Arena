@@ -172,7 +172,7 @@ Transform:
   m_Children:
   - {fileID: 1603816043688346547}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3933763823792065654
 MeshFilter:
@@ -287,9 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  health: 0
   minDistance: 5.5
   attackDistance: 14.81
+  attackRate: 0.5
   bullet: {fileID: 4381916301516679628, guid: f32e17cc31d692f49b69f1cc6f6d7da4, type: 3}
   firePoint: {fileID: 3150571667523523314}
-  fireRate: 0.5
