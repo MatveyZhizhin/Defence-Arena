@@ -23,13 +23,13 @@ namespace Assets.Scripts.Player
         }
 
         public void TakeDamage(float damage)
-        {
+        {           
+            health -= damage;
+
             if (health <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
-
-            health -= damage;
         }
 
 

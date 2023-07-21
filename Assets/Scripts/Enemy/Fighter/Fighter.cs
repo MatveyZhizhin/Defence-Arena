@@ -14,8 +14,11 @@ namespace Assets.Scripts.Enemy.Fighter
 
         protected override IEnumerator Attack()
         {
-            Hit();
-            yield return new WaitForSeconds(attackRate);
+            while (true)
+            {
+                Hit();
+                yield return new WaitForSeconds(attackRate);
+            }            
         }       
     }
 }
