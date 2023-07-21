@@ -11,6 +11,7 @@ namespace Assets.Scripts.Enemy
         [SerializeField] private float speed;
         [SerializeField] protected float minDistance;
         [SerializeField] protected float attackDistance;
+        [SerializeField] protected float attackRate;
 
         protected float currentDistance;
 

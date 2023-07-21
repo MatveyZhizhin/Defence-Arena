@@ -8,15 +8,14 @@ namespace Assets.Scripts.Enemy.Shooter
     public class Shooter : Enemy
     {        
         [SerializeField] private _Bullet bullet;
-        [SerializeField] private Transform firePoint;
-        [SerializeField] private float fireRate;
+        [SerializeField] private Transform firePoint;        
 
         protected override IEnumerator Attack()
         {
             while (true)
             {                
                 Instantiate(bullet, firePoint.position, transform.rotation);
-                yield return new WaitForSeconds(fireRate);
+                yield return new WaitForSeconds(attackRate);
             }
         }
     }
