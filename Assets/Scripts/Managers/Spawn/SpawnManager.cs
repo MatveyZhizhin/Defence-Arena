@@ -9,7 +9,12 @@ namespace Assets.Scripts.Managers.Spawn
     {
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private List<_Enemy> currentEnemies;
-        [SerializeField] private float spawnRate;      
+        [SerializeField] private float spawnRate;
+
+        private void Awake()
+        {
+            StartCoroutine(Spawn(10));
+        }
 
         public void AddEnemy(_Enemy enemy)
         {
@@ -20,7 +25,7 @@ namespace Assets.Scripts.Managers.Spawn
         {
             for (int i = 0; i < enemyCount; i++)
             {
-                Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count - 1)], spawnPoints[Random.Range(0, spawnPoints.Length - 1)].position, Quaternion.identity);
+                Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
                 yield return new WaitForSeconds(spawnRate);
             }
         }

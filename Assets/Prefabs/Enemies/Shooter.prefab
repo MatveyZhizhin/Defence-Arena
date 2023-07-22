@@ -287,7 +287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  minDistance: 5.5
+  health: 0
+  minDistance: 7
   attackDistance: 14.81
   attackRate: 0.5
   bullet: {fileID: 4381916301516679628, guid: f32e17cc31d692f49b69f1cc6f6d7da4, type: 3}

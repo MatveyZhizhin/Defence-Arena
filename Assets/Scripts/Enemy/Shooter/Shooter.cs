@@ -10,11 +10,6 @@ namespace Assets.Scripts.Enemy.Shooter
         [SerializeField] private _Bullet bullet;
         [SerializeField] private Transform firePoint;
 
-        private void Awake()
-        {
-            DontDestroyOnLoad(this);
-        }
-
         protected override IEnumerator Attack()
         {
             while (true)
