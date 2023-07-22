@@ -9,7 +9,7 @@ namespace Assets.Scripts.Managers.Spawn
     {
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private List<_Enemy> currentEnemies;
-        [SerializeField] private float spawnRate;
+        [SerializeField] private float spawnRate;      
 
         public void AddEnemy(_Enemy enemy)
         {
