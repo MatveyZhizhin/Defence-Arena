@@ -5,10 +5,15 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy.Shooter
 {
-    public class Shooter : Enemy
+    public class Shooter : _Enemy
     {        
         [SerializeField] private _Bullet bullet;
-        [SerializeField] private Transform firePoint;        
+        [SerializeField] private Transform firePoint;
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this);
+        }
 
         protected override IEnumerator Attack()
         {

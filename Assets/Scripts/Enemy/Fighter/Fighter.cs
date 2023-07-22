@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy.Fighter
 {   
-    public class Fighter : Enemy
+    public class Fighter : _Enemy
     {
         [SerializeField] private float damage;
 
