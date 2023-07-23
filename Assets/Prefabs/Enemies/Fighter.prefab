@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 712118654219534095}
   - component: {fileID: 5488117046960576446}
   - component: {fileID: 3915115067630288269}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - component: {fileID: 4381617631348325235}
   - component: {fileID: 531904368452352760}
   - component: {fileID: 1127776471349788299}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fighter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 7
-  health: 0
+  health: 5
   minDistance: 3.5
   attackDistance: 5
   attackRate: 0.5
