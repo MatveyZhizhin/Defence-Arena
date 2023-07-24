@@ -45,9 +45,9 @@ namespace Assets.Scripts.Enemy
         private void Move()
         {
             currentDistance = Vector3.Distance(_player.transform.position, transform.position);
+            transform.LookAt(_player.transform.position);
             if (currentDistance > minDistance)
-            {
-                transform.LookAt(_player.transform.position);
+            {               
                 transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, speed * Time.deltaTime);
             }
 
