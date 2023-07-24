@@ -20,8 +20,7 @@ namespace Assets.Scripts.Player.Guns
         }
 
         protected virtual IEnumerator Fire()
-        {
-            isAttacking = true;
+        {           
             while (true)
             {
                 Instantiate(bullet, firePoint.position, transform.rotation);
@@ -40,6 +39,7 @@ namespace Assets.Scripts.Player.Guns
                 if (!isAttacking)
                 {
                     StartCoroutine(Fire());
+                    isAttacking = true;
                 }                              
             }
             else
