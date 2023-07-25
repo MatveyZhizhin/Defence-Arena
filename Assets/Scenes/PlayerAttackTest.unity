@@ -1248,7 +1248,7 @@ MonoBehaviour:
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
   firePoint: {fileID: 1736426552}
   joystick: {fileID: 1508105137}
-  fireRate: 0
+  fireRate: 0.1
 --- !u!65 &1793306511
 BoxCollider:
   m_ObjectHideFlags: 0
