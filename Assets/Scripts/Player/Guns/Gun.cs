@@ -7,7 +7,7 @@ namespace Assets.Scripts.Player.Guns
     public class Gun : MonoBehaviour
     {
         [SerializeField] protected _Bullet bullet;
-        [SerializeField] private Transform firePoint;
+        [SerializeField] protected Transform[] firePoints;
         [SerializeField] private Joystick joystick;
 
         private bool isAttacking;
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Player.Guns
         {           
             while (true)
             {
-                Instantiate(bullet, firePoint.position, transform.rotation);
+                Instantiate(bullet, firePoints[0].position, transform.rotation);
                 yield return new WaitForSeconds(fireRate);
             }
         }

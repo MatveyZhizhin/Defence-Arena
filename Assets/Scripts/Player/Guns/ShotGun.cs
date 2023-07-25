@@ -5,8 +5,6 @@ namespace Assets.Scripts.Player.Guns
 {
     public class Shotgun : Gun
     {
-        private Transform[] firePoints;
-
         protected override IEnumerator Fire()
         {
             while (true)

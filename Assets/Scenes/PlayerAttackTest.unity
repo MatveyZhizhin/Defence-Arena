@@ -875,7 +875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoint: {fileID: 528532429}
+  firePoints: []
   joystick: {fileID: 1508105137}
   fireRate: 0.2
 --- !u!65 &1220979569
@@ -1220,7 +1220,7 @@ GameObject:
   - component: {fileID: 1476783189}
   - component: {fileID: 1476783188}
   m_Layer: 0
-  m_Name: shotgun
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoint: {fileID: 0}
+  firePoints: []
   joystick: {fileID: 1508105137}
   fireRate: 2
 --- !u!65 &1476783189
@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoint: {fileID: 1736426552}
+  firePoints: []
   joystick: {fileID: 1508105137}
   fireRate: 0.05
 --- !u!65 &1793306511
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoint: {fileID: 1840851261}
+  firePoints: []
   joystick: {fileID: 1508105137}
   fireRate: 1
 --- !u!65 &1905774427
