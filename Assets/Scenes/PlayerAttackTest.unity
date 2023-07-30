@@ -1257,7 +1257,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
+  firePoints:
+  - {fileID: 2120718703}
+  - {fileID: 821900501}
+  - {fileID: 1093499730}
   joystick: {fileID: 1508105137}
   fireRate: 2
 --- !u!65 &1476783189
