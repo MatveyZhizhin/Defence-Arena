@@ -217,7 +217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_Name
-      value: Dynamic Joystick (1)
+      value: AttackJoystick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -434,7 +434,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 821900500}
   m_LocalRotation: {x: -0, y: 0.32561955, z: 0.000000007450579, w: 0.94550085}
-  m_LocalPosition: {x: 0.87, y: 0.009999529, z: 0.555}
+  m_LocalPosition: {x: 0.034829967, y: 0.0138863, z: 0.55316263}
   m_LocalScale: {x: 1.8430561, y: 1.7358098, z: 0.4254653}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -819,7 +819,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1093499729}
   m_LocalRotation: {x: 0.0000000074505797, y: -0.3404021, z: -0.0000000037252899, w: 0.94027996}
-  m_LocalPosition: {x: -0.8, y: 0.010000448, z: 0.552}
+  m_LocalPosition: {x: 0.034829967, y: 0.0138863, z: 0.55316263}
   m_LocalScale: {x: 1.8430561, y: 1.7358098, z: 0.4254653}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -840,7 +840,7 @@ GameObject:
   - component: {fileID: 1220979569}
   - component: {fileID: 1220979568}
   m_Layer: 0
-  m_Name: automatic
+  m_Name: Riffle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   health: 10
-  joystick: {fileID: 882167142}
+  joystick: {fileID: 1508105137}
 --- !u!1001 &1457306778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1199,7 +1199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8135886326569738825, guid: 56fae09712773584fb63896d473a98ee, type: 3}
       propertyPath: m_Name
-      value: Dynamic Joystick
+      value: MoveJoystick
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1218,7 +1218,7 @@ GameObject:
   - component: {fileID: 1476783191}
   - component: {fileID: 1476783190}
   - component: {fileID: 1476783189}
-  - component: {fileID: 1476783188}
+  - component: {fileID: 1476783192}
   m_Layer: 0
   m_Name: Shotgun
   m_TagString: Untagged
@@ -1244,25 +1244,6 @@ Transform:
   m_Father: {fileID: 1453424044}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
---- !u!114 &1476783188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476783186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59ccaf5edcdfb2b4e929e166255479ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints:
-  - {fileID: 2120718703}
-  - {fileID: 821900501}
-  - {fileID: 1093499730}
-  joystick: {fileID: 1508105137}
-  fireRate: 2
 --- !u!65 &1476783189
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1334,6 +1315,25 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476783186}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1476783192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1476783186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b8522afd3ffdb347af51e1880a41446, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
+  firePoints:
+  - {fileID: 2120718703}
+  - {fileID: 821900501}
+  - {fileID: 1093499730}
+  joystick: {fileID: 882167142}
+  fireRate: 1
 --- !u!224 &1508105136 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
@@ -1524,7 +1524,7 @@ GameObject:
   - component: {fileID: 1793306511}
   - component: {fileID: 1793306510}
   m_Layer: 0
-  m_Name: minigun
+  m_Name: Minigun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1678,7 +1678,7 @@ GameObject:
   - component: {fileID: 1905774427}
   - component: {fileID: 1905774426}
   m_Layer: 0
-  m_Name: Gun
+  m_Name: Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,7 +16,7 @@ namespace Assets.Scripts.Player.Guns
 
         private void Update()
         {
-            Move();
+            MoveGun();
         }
 
         private IEnumerator Fire()
@@ -31,7 +31,7 @@ namespace Assets.Scripts.Player.Guns
             }
         }
 
-        private void Move()
+        private void MoveGun()
         {
             var rot = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
 
