@@ -13,7 +13,7 @@ namespace Assets.Scripts.UI.Upgrades
         {
             newWeapon = weapons[Random.Range(0, weapons.Length)];
 
-            foreach (var icon in buttonIcons)
+            /*foreach (var icon in buttonIcons)
             {
                 if (icon.name == newWeapon.name)
                 {
@@ -22,7 +22,7 @@ namespace Assets.Scripts.UI.Upgrades
                     break;
                 }
             }
-
+            */
             upgradeButton?.onClick.AddListener(() => DoUpgrade());
         }
 
