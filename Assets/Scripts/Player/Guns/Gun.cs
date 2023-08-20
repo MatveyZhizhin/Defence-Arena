@@ -16,7 +16,7 @@ namespace Assets.Scripts.Player.Guns
 
         private void Update()
         {
-            //MoveGun();
+            MoveGun();
         }
 
         private IEnumerator Fire()
