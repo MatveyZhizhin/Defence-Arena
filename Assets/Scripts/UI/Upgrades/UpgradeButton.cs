@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Scripts.Upgrades
-{    
+namespace Assets.Scripts.UI.Upgrades
+{
+    [RequireComponent(typeof(Button))]
     public abstract class UpgradeButton : MonoBehaviour
     {
-        [SerializeField] private Image[] buttonIcons;
+        [SerializeField] protected Image[] buttonIcons;
 
         protected Button upgradeButton;
 

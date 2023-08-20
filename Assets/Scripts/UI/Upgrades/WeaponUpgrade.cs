@@ -1,14 +1,11 @@
 using UnityEngine;
 using Assets.Scripts.Player.Guns;
-using System.Collections;
-using UnityEngine.UI;
 
-namespace Assets.Scripts.Upgrades
+namespace Assets.Scripts.UI.Upgrades
 {
     public class WeaponUpgrade : UpgradeButton
     {
         [SerializeField] private Gun[] weapons;
-        [SerializeField] private Image[] buttonIcons;
 
         private Gun newWeapon;
 
@@ -35,6 +32,10 @@ namespace Assets.Scripts.Upgrades
             {
                 if (weapon.gameObject.activeInHierarchy)
                 {
+                    while (newWeapon == weapon)
+                    {
+                        newWeapon = weapons[Random.Range(0, weapons.Length)];
+                    }
                     weapon.gameObject.SetActive(false);
                     newWeapon.gameObject.SetActive(true);
                     break;
