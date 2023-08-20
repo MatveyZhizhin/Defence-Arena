@@ -9,7 +9,7 @@ namespace Assets.Scripts.Enemy.Fighter
 
         private void Hit()
         {
-            //_player.TakeDamage(damage);
+            _player.TakeDamage(damage);
         }
 
         protected override IEnumerator Attack()

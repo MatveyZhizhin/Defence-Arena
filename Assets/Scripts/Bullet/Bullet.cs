@@ -1,5 +1,3 @@
-
-using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Bullet
@@ -27,7 +25,7 @@ namespace Assets.Scripts.Bullet
                 {
                     if (hitInfo.collider.TryGetComponent(out IAttackable obj))
                     {
-                        hitInfo.collider.GetComponent<IAttackable>().TakeDamage(damage);
+                        obj.TakeDamage(damage);
                     }
                     Destroy(gameObject);
                 }               
