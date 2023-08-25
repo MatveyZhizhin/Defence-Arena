@@ -1,5 +1,4 @@
 ﻿using Assets.Scripts.Bullet;
-using Assets.Scripts.Player;
 using System.Collections;
 using UnityEngine;
 

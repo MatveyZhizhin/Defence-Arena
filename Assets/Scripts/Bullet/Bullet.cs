@@ -1,15 +1,13 @@
-
-using Assets.Scripts.Player;
 using UnityEngine;
 
 namespace Assets.Scripts.Bullet
 {
     public class _Bullet : MonoBehaviour
-    {
-        [SerializeField] private float damage;
+    {        
         [SerializeField] private float speed;
         [SerializeField] private float lifeTime;
         [SerializeField] private float distance;
+        [field: SerializeField] public float Damage { private get; set; }
         [SerializeField] private LayerMask solid;
 
         private void Update()
@@ -27,7 +25,7 @@ namespace Assets.Scripts.Bullet
                 {
                     if (hitInfo.collider.TryGetComponent(out IAttackable obj))
                     {
-                        hitInfo.collider.GetComponent<IAttackable>().TakeDamage(damage);
+                        obj.TakeDamage(Damage);
                     }
                     Destroy(gameObject);
                 }               

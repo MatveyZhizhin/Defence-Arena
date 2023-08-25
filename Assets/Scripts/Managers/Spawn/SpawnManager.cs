@@ -11,11 +11,6 @@ namespace Assets.Scripts.Managers.Spawn
         [SerializeField] private List<_Enemy> currentEnemies;
         [SerializeField] private float spawnRate;
 
-        private void Awake()
-        {
-            StartCoroutine(Spawn(10));
-        }
-
         public void AddEnemy(_Enemy enemy)
         {
             currentEnemies.Add(enemy);
