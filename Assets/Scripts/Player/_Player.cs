@@ -7,7 +7,7 @@ namespace Assets.Scripts.Player
     public class _Player : MonoBehaviour, IAttackable
     {
         [SerializeField] private float speed;
-        [SerializeField] private float health;
+        [field: SerializeField] public float Health { private get; set; }
 
         private Rigidbody playerRigidbody;
         [SerializeField] private Joystick joystick;     
@@ -24,9 +24,9 @@ namespace Assets.Scripts.Player
 
         public void TakeDamage(float damage)
         {           
-            health -= damage;
+            Health -= damage;
 
-            if (health <= 0)
+            if (Health <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }

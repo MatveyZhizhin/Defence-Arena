@@ -18,7 +18,6 @@ namespace Assets.Scripts.UI.Upgrades
                 if (icon.name == newWeapon.name)
                 {
                     upgradeButton.GetComponent<SpriteRenderer>().sprite = icon.sprite;
-                    icon.SetNativeSize();
                     break;
                 }
             }  
