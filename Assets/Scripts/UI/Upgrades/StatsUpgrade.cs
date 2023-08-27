@@ -33,8 +33,7 @@ namespace Assets.Scripts.UI.Upgrades
                     upgradeButton.GetComponent<SpriteRenderer>().sprite = icon.sprite;
                     break;
                 }
-            }
-            upgradeButton?.onClick.AddListener(() => DoUpgrade());
+            }            
         }
 
         protected override void DoUpgrade()
