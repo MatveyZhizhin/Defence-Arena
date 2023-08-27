@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.Scripts.Managers.Spawn
+namespace Assets.Scripts.Managers
 {
     public class SpawnManager : MonoBehaviour
     {

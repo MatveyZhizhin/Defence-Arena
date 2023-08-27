@@ -1,8 +1,7 @@
-﻿using Assets.Scripts.Bullet;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy.Shooter
+namespace Assets.Scripts.Enemy
 {
     public class Shooter : _Enemy
     {        

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class _Player : MonoBehaviour, IAttackable
+    public class _Player : MonoBehaviour, IUnit
     {
         [SerializeField] private float speed;
         [SerializeField] private float health;

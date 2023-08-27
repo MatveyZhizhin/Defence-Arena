@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Enemy.Fighter
+namespace Assets.Scripts.Enemy
 {   
     public class Fighter : _Enemy
     {
