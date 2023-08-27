@@ -7,7 +7,7 @@ namespace Assets.Scripts.Player
     public class _Player : MonoBehaviour, IUnit
     {
         [SerializeField] private float speed;
-        [field: SerializeField] public float Health { private get; set; }
+        [field: SerializeField] public float Health { get; set; }
 
         private Rigidbody playerRigidbody;
         [SerializeField] private Joystick joystick;     

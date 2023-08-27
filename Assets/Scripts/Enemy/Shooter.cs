@@ -5,7 +5,7 @@ namespace Assets.Scripts.Enemy
 {
     public class Shooter : _Enemy
     {        
-        [SerializeField] private _Bullet bullet;
+        [SerializeField] private Bullet bullet;
         [SerializeField] private Transform firePoint;
 
         protected override IEnumerator Attack()

@@ -1,5 +1,5 @@
 using UnityEngine;
-using Assets.Scripts.Player.Guns;
+using Assets.Scripts.Player;
 
 namespace Assets.Scripts.UI.Upgrades
 {
@@ -20,8 +20,7 @@ namespace Assets.Scripts.UI.Upgrades
                     upgradeButton.GetComponent<SpriteRenderer>().sprite = icon.sprite;
                     break;
                 }
-            }  
-            
+            }
             upgradeButton?.onClick.AddListener(() => DoUpgrade());
         }
 

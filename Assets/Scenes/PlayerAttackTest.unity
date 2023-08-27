@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  health: 10
+  <Health>k__BackingField: 10
   joystick: {fileID: 1508105137}
 --- !u!1001 &1457306778
 PrefabInstance:

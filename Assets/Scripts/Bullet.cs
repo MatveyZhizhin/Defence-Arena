@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class _Bullet : MonoBehaviour
-{        
+public class Bullet : MonoBehaviour
+{       
     [SerializeField] private float speed;
     [SerializeField] private float lifeTime;
     [SerializeField] private float distance;
-    [field: SerializeField] public float Damage { private get; set; }
+    [field: SerializeField] public float Damage { get; set; }
     [SerializeField] private LayerMask solid;
 
     private void Update()

@@ -5,7 +5,7 @@ namespace Assets.Scripts.Player
 {
     public class Gun : MonoBehaviour
     {
-        [SerializeField] private _Bullet bullet;
+        [SerializeField] private Bullet bullet;
         [SerializeField] private Transform[] firePoints;
         [SerializeField] private Joystick joystick;
 
