@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    public abstract class _Enemy : MonoBehaviour, IAttackable
+    public abstract class _Enemy : MonoBehaviour, IUnit
     {
         protected _Player _player;
 

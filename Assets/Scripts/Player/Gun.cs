@@ -1,8 +1,7 @@
-using Assets.Scripts.Bullet;
 using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.Player.Guns
+namespace Assets.Scripts.Player
 {
     public class Gun : MonoBehaviour
     {
