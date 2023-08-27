@@ -8,6 +8,7 @@ namespace Assets.Scripts.UI.Upgrades
     {
         Health,
         Damage,
+        Speed
     }
 
     public class StatsUpgrade : UpgradeButton
@@ -15,7 +16,6 @@ namespace Assets.Scripts.UI.Upgrades
         private Stats stats;
             
         private int percent;
-        [SerializeField] private float maxValue;
 
 
         [SerializeField] private TextMeshProUGUI percentText;        
@@ -24,7 +24,7 @@ namespace Assets.Scripts.UI.Upgrades
         protected override void GenerateButton()
         {
             stats = (Stats)Random.Range(0, 2);
-            percent = Random.Range(1, 100);
+            percent = Random.Range(1, 10);
             percentText.SetText(percent.ToString());
             foreach (var icon in buttonIcons)
             {
@@ -42,11 +42,11 @@ namespace Assets.Scripts.UI.Upgrades
             switch (stats)
             {
                 case Stats.Health:  
-                    player.Health += (percent * maxValue) / 100; 
+                    player.Health += (percent * player.Health) / 100; 
                     break;
 
                 case Stats.Damage:
-                   playerBullet.Damage += (percent * maxValue) / 100; 
+                   playerBullet.Damage += (percent * playerBullet.Damage) / 100; 
                     break;
             }
         }

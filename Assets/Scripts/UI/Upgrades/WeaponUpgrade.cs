@@ -21,7 +21,6 @@ namespace Assets.Scripts.UI.Upgrades
                     break;
                 }
             }
-            upgradeButton?.onClick.AddListener(() => DoUpgrade());
         }
 
         protected override void DoUpgrade()

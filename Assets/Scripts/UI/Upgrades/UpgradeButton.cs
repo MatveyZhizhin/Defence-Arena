@@ -17,7 +17,11 @@ namespace Assets.Scripts.UI.Upgrades
             player = FindObjectOfType<_Player>();
         }
 
-        private void Start() => GenerateButton();
+        private void Start()
+        {
+            GenerateButton();
+            upgradeButton?.onClick.AddListener(() => DoUpgrade());
+        }
 
         protected abstract void GenerateButton();
 
