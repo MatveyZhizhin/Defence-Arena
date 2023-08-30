@@ -842,7 +842,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
+  firePoints:
+  - {fileID: 528532429}
   joystick: {fileID: 314700863}
   fireRate: 0.2
 --- !u!65 &1220979569
@@ -1573,7 +1574,6 @@ MonoBehaviour:
   buttonIcons:
   - {fileID: 637247638573157695, guid: ef2d63fba8e5ff74fb07d2b7352d7b83, type: 3}
   - {fileID: 748824173893904461, guid: bf4a63f306ef91d4cacbd0153fac3683, type: 3}
-  maxValue: 100
   percentText: {fileID: 1326275560}
   playerBullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
 --- !u!114 &1551920192
@@ -1790,7 +1790,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
+  firePoints:
+  - {fileID: 1736426552}
   joystick: {fileID: 314700863}
   fireRate: 0.05
 --- !u!65 &1793306511
@@ -2141,7 +2142,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
+  firePoints:
+  - {fileID: 1840851261}
   joystick: {fileID: 314700863}
   fireRate: 1
 --- !u!65 &1905774427
