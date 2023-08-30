@@ -1,16 +1,31 @@
+using Assets.Scripts.Enemy;
+using Assets.Scripts.Player;
 using UnityEngine;
+enum Bullet
+{
+    playerBullet,
+    enemyBullet
+}
 
-public class Bullet : MonoBehaviour
-{       
+public class _Bullet : MonoBehaviour
+{        
     [SerializeField] private float speed;
     [SerializeField] private float lifeTime;
     [SerializeField] private float distance;
-    [field: SerializeField] public float Damage { get; set; }
+
     [SerializeField] private LayerMask solid;
+    [SerializeField] private Bullet bullet;
+
+    private float damage;
 
     private void Update()
     {
         Fire();
+    }
+
+    public void SetDamage(float damage)
+    {
+        this.damage = damage;       
     }
 
     private void Fire()
@@ -21,9 +36,14 @@ public class Bullet : MonoBehaviour
         {                
             if (hitInfo.collider != null)
             {
-                if (hitInfo.collider.TryGetComponent(out IUnit obj))
+                if (bullet == Bullet.enemyBullet && hitInfo.collider.TryGetComponent(out IPlayer player))
                 {
-                    obj.TakeDamage(Damage);
+                    player.TakeDamage(damage);
+                }
+
+                if (bullet == Bullet.playerBullet && hitInfo.collider.TryGetComponent(out IEnemy enemy))
+                {
+                    enemy.TakeDamage(damage);
                 }
                 Destroy(gameObject);
             }               

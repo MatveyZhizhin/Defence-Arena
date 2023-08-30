@@ -311,6 +311,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fighter
       objectReference: {fileID: 0}
+    - target: {fileID: 7335145780599781589, guid: 61a8aeb7c54b39c43a893181e6f4f6e2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -875,8 +879,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
-  joystick: {fileID: 1508105137}
+  firePoints:
+  - {fileID: 528532429}
+  joystick: {fileID: 882167142}
   fireRate: 0.2
 --- !u!65 &1220979569
 BoxCollider:
@@ -1105,6 +1110,7 @@ MonoBehaviour:
   speed: 10
   <Health>k__BackingField: 10
   joystick: {fileID: 1508105137}
+  <Damage>k__BackingField: 2
 --- !u!1001 &1457306778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1430,6 +1436,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shooter
       objectReference: {fileID: 0}
+    - target: {fileID: 7411971745091044092, guid: f3bfba253c6a2c048884668a988a869a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8844192293772958428, guid: f3bfba253c6a2c048884668a988a869a, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1559,8 +1569,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
-  joystick: {fileID: 1508105137}
+  firePoints:
+  - {fileID: 1736426552}
+  joystick: {fileID: 882167142}
   fireRate: 0.05
 --- !u!65 &1793306511
 BoxCollider:
@@ -1713,8 +1724,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4381916301516679628, guid: 258d74ff94a2e0940a2623a2f0e1b7d2, type: 3}
-  firePoints: []
-  joystick: {fileID: 1508105137}
+  firePoints:
+  - {fileID: 1840851261}
+  joystick: {fileID: 882167142}
   fireRate: 1
 --- !u!65 &1905774427
 BoxCollider:

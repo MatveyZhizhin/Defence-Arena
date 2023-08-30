@@ -4,12 +4,13 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    public abstract class _Enemy : MonoBehaviour, IUnit
+    public abstract class _Enemy : MonoBehaviour, IEnemy
     {
         protected _Player _player;
 
         [SerializeField] private float speed;
         [SerializeField] private float health;
+        [SerializeField] protected float damage;
 
         [SerializeField] protected float minDistance;
         [SerializeField] protected float attackDistance;
@@ -18,7 +19,7 @@ namespace Assets.Scripts.Enemy
 
         protected float currentDistance;
 
-        private bool isAttacking;
+        private bool isAttacking;        
 
         private void Awake()
         {

@@ -121,7 +121,7 @@ MonoBehaviour:
   speed: 30
   lifeTime: 5
   distance: 0.5
-  <Damage>k__BackingField: 1
   solid:
     serializedVersion: 2
     m_Bits: 8
+  bullet: 1

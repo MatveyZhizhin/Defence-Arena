@@ -5,13 +5,19 @@ namespace Assets.Scripts.Player
 {
     public class Gun : MonoBehaviour
     {
-        [SerializeField] private Bullet bullet;
+        private IPlayer player;
+        [SerializeField] private _Bullet bullet;
         [SerializeField] private Transform[] firePoints;
         [SerializeField] private Joystick joystick;
 
         private bool isAttacking;
 
         [SerializeField] protected float fireRate;
+
+        private void Awake()
+        {
+            player = FindObjectOfType<_Player>();
+        }
 
         private void Update()
         {
@@ -24,7 +30,8 @@ namespace Assets.Scripts.Player
             {
                 foreach (var firePoint in firePoints)
                 {
-                    Instantiate(bullet, firePoint.position, firePoint.rotation);
+                   var newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
+                   newBullet.SetDamage(player.Damage);
                 }
                 yield return new WaitForSeconds(fireRate);
             }

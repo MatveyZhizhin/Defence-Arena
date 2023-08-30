@@ -4,14 +4,17 @@ using UnityEngine;
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class _Player : MonoBehaviour, IUnit
+    public class _Player : MonoBehaviour, IPlayer
     {
         [SerializeField] private float speed;
         [field: SerializeField] public float Health { get; set; }
 
         private Rigidbody playerRigidbody;
-        [SerializeField] private Joystick joystick;     
-        
+        [SerializeField] private Joystick joystick;
+
+        public float Health { set => health = value; }
+        [field: SerializeField] public float Damage { get; set; }
+
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
