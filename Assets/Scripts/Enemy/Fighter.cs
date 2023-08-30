@@ -5,8 +5,6 @@ namespace Assets.Scripts.Enemy
 {   
     public class Fighter : _Enemy
     {
-        [SerializeField] private float damage;
-
         private void Hit()
         {
             _player.TakeDamage(damage);
