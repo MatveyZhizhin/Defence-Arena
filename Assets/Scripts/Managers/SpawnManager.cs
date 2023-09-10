@@ -9,6 +9,7 @@ namespace Assets.Scripts.Managers
     {
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private List<_Enemy> currentEnemies;
+        private List<_Enemy> spawnedEnemies = new List<_Enemy>();
         [SerializeField] private float spawnRate;
 
         public void AddEnemy(_Enemy enemy)
@@ -16,12 +17,21 @@ namespace Assets.Scripts.Managers
             currentEnemies.Add(enemy);
         }
 
-        public IEnumerator Spawn(int enemyCount)
+        public IEnumerator Spawn()
         {
-            for (int i = 0; i < enemyCount; i++)
+            while(true) 
             {
-                Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
+                var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
+                spawnedEnemies.Add(newEnemy);
                 yield return new WaitForSeconds(spawnRate);
+            }
+        }
+
+        public void DeleteEnemies()
+        {
+            foreach (var enemy in currentEnemies)
+            {
+                Destroy(enemy);
             }
         }
     }
