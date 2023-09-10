@@ -9,7 +9,9 @@ namespace Assets.Scripts.UI.Upgrades
     {
         [SerializeField] protected Image[] buttonIcons;
         protected Button upgradeButton;
-        protected _Player player;
+        protected IPlayer player;
+
+        public bool IsUpgraded { get; protected set; }
 
         private void Awake()
         {

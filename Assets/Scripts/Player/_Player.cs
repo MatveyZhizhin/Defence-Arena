@@ -7,18 +7,19 @@ namespace Assets.Scripts.Player
     public class _Player : MonoBehaviour, IPlayer
     {
         [SerializeField] private float speed;
-        [field: SerializeField] public float Health { get; set; }
+        [SerializeField] private float health;
 
         private Rigidbody playerRigidbody;
         [SerializeField] private Joystick joystick;
 
-        public float Health { set => health = value; }
+        public float Health { get => health; set => health = value; }
         [field: SerializeField] public float Damage { get; set; }
+        public float Speed { get => speed; set => speed = value; }
 
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
-        }
+        }     
 
         private void FixedUpdate()
         {
@@ -27,9 +28,9 @@ namespace Assets.Scripts.Player
 
         public void TakeDamage(float damage)
         {           
-            Health -= damage;
+            health -= damage;
 
-            if (Health <= 0)
+            if (health <= 0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
