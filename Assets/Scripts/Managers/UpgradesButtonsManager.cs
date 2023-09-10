@@ -1,5 +1,7 @@
 using Assets.Scripts.UI.Upgrades;
+using System;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -11,12 +13,9 @@ namespace Assets.Scripts.Managers
         [SerializeField] private UpgradeButton[] thirdButton;
         [SerializeField] private UpgradeButton[] fourthButton;
 
-        private List<UpgradeButton> currentButtons;
+        public event Action OnUpgrade;
 
-        private void Start()
-        {
-            EnableButtons();
-        }
+        private List<UpgradeButton> currentButtons;
 
         private void Update()
         {
@@ -45,6 +44,7 @@ namespace Assets.Scripts.Managers
             {
                 if (upgrade.IsUpgraded)
                 {
+                    OnUpgrade?.Invoke();
                     foreach (var button in currentButtons)
                     {
                         button.gameObject.SetActive(false);
