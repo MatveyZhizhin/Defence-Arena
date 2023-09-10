@@ -1,4 +1,5 @@
 using UnityEngine.SceneManagement;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Scripts.Player
@@ -8,6 +9,8 @@ namespace Assets.Scripts.Player
     {
         [SerializeField] private float speed;
         [SerializeField] private float health;
+
+        [SerializeField] private TextMeshProUGUI healthText;
 
         private Rigidbody playerRigidbody;
         [SerializeField] private Joystick joystick;
@@ -19,7 +22,12 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
-        }     
+        }
+
+        private void Start()
+        {
+            healthText.SetText($"Health: {health}");
+        }
 
         private void FixedUpdate()
         {
@@ -29,6 +37,7 @@ namespace Assets.Scripts.Player
         public void TakeDamage(float damage)
         {           
             health -= damage;
+            healthText.SetText($"Health: {health}");
 
             if (health <= 0)
             {
