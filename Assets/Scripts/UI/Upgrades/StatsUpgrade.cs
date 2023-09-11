@@ -41,6 +41,7 @@ namespace Assets.Scripts.UI.Upgrades
             {
                 case Stats.Health:  
                     player.Health += (percent * player.Health) / 100; 
+                    player.UpdateHealth();
                     break;
 
                 case Stats.Damage:
@@ -51,7 +52,6 @@ namespace Assets.Scripts.UI.Upgrades
                     player.Speed += (percent * player.Speed) / 100;
                     break;
             }
-
             IsUpgraded = true;
         }
     }

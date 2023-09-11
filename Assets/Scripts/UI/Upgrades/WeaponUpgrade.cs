@@ -38,7 +38,6 @@ namespace Assets.Scripts.UI.Upgrades
                     break;
                 }
             }
-
             IsUpgraded = true;
         }       
     }

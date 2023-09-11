@@ -29,6 +29,11 @@ namespace Assets.Scripts.Player
             healthText.SetText($"Health: {health}");
         }
 
+        public void UpdateHealth()
+        {
+            healthText.SetText($"Health: {health}");
+        }
+
         private void FixedUpdate()
         {
             Move();

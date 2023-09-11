@@ -23,7 +23,7 @@ namespace Assets.Scripts.Managers
         }
 
         public void EnableButtons()
-        {
+        {            
             currentButtons.Add(firstButton[Random.Range(0, firstButton.Length)]);
             currentButtons.Add(secondButton[Random.Range(0, secondButton.Length)]);
             currentButtons.Add(thirdButton[Random.Range(0, thirdButton.Length)]);

@@ -12,6 +12,7 @@ public class WavesManager : MonoBehaviour
     private int wavesCount;
 
     [SerializeField] private TextMeshProUGUI timerText;
+    [SerializeField] private TextMeshProUGUI wavesCountText;
 
     private SpawnManager spawnManager;
     private UpgradesButtonsManager upgradesButtonsManager;
@@ -42,6 +43,7 @@ public class WavesManager : MonoBehaviour
         upgradesButtonsManager.OnUpgrade -= StartWave;
         StartCoroutine(spawnManager.Spawn());
         wavesCount++;
+        wavesCountText.SetText($"Волна: {wavesCount}");
         if (wavesCount % 5 == 0)
         {
             spawnManager.AddEnemy(allEnemies);
