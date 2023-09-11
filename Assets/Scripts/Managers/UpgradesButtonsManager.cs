@@ -15,7 +15,7 @@ namespace Assets.Scripts.Managers
 
         public event Action OnUpgrade;
 
-        private List<UpgradeButton> currentButtons;
+        private List<UpgradeButton> currentButtons = new List<UpgradeButton>();
 
         private void Update()
         {
@@ -24,13 +24,10 @@ namespace Assets.Scripts.Managers
 
         public void EnableButtons()
         {
-            currentButtons = new List<UpgradeButton>
-            {
-                firstButton[Random.Range(0, firstButton.Length)],
-                secondButton[Random.Range(0, secondButton.Length)],
-                thirdButton[Random.Range(0, thirdButton.Length)],
-                fourthButton[Random.Range(0, fourthButton.Length)]
-            };
+            currentButtons.Add(firstButton[Random.Range(0, firstButton.Length)]);
+            currentButtons.Add(secondButton[Random.Range(0, secondButton.Length)]);
+            currentButtons.Add(thirdButton[Random.Range(0, thirdButton.Length)]);
+            currentButtons.Add(fourthButton[Random.Range(0, fourthButton.Length)]);
 
             foreach (var button in currentButtons)
             {
@@ -47,8 +44,10 @@ namespace Assets.Scripts.Managers
                     OnUpgrade?.Invoke();
                     foreach (var button in currentButtons)
                     {
-                        button.gameObject.SetActive(false);
+                        button.gameObject.SetActive(false);                       
                     }
+                    currentButtons.Clear();
+                    break;
                 }
             }
         }

@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using Assets.Scripts.Managers;
 using Assets.Scripts.Player;
 using UnityEngine;
 
@@ -7,6 +9,7 @@ namespace Assets.Scripts.Enemy
     public abstract class _Enemy : MonoBehaviour, IEnemy
     {
         protected _Player _player;
+        private SpawnManager spawnManager;
 
         [SerializeField] private float speed;
         [SerializeField] private float health;
@@ -24,6 +27,7 @@ namespace Assets.Scripts.Enemy
         private void Awake()
         {
             _player = FindObjectOfType<_Player>();
+            spawnManager = FindObjectOfType<SpawnManager>();
         }
 
         private void Update()
@@ -39,6 +43,7 @@ namespace Assets.Scripts.Enemy
 
             if (health <= 0)
             {
+                spawnManager.RemoveEnemy(this);
                 Destroy(gameObject);
             }
         }

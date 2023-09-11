@@ -40,6 +40,6 @@ namespace Assets.Scripts.UI.Upgrades
             }
 
             IsUpgraded = true;
-        }
+        }       
     }
 }

@@ -1,6 +1,7 @@
 using Assets.Scripts.Enemy;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Assets.Scripts.Managers
@@ -9,12 +10,26 @@ namespace Assets.Scripts.Managers
     {
         [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private List<_Enemy> currentEnemies;
+
         private List<_Enemy> spawnedEnemies = new List<_Enemy>();
+
         [SerializeField] private float spawnRate;
 
-        public void AddEnemy(_Enemy enemy)
+        public float SpawnRate { get => spawnRate; set => spawnRate = value; }
+
+        public void AddEnemy(_Enemy[] enemies)
         {
-            currentEnemies.Add(enemy);
+            foreach (var enemy in enemies)
+            {
+                foreach (var currentEnemy in currentEnemies)
+                {
+                    if (enemy != currentEnemy)
+                    {
+                        currentEnemies.Add(enemy);
+                        return;
+                    }
+                }
+            }
         }
 
         public IEnumerator Spawn()
@@ -27,11 +42,24 @@ namespace Assets.Scripts.Managers
             }
         }
 
-        public void DeleteEnemies()
+        public void RemoveEnemy(_Enemy enemy)
         {
-            foreach (var enemy in currentEnemies)
+            spawnedEnemies.Remove(enemy);
+        }
+
+        public void DeleteEnemies()
+        {                      
+            foreach (var enemy in spawnedEnemies.ToList())
             {
-                Destroy(enemy);
+                if (spawnedEnemies != null)
+                {
+                    spawnedEnemies.Remove(enemy);
+                    Destroy(enemy.gameObject);
+                }
+                else
+                {
+                    return;
+                }           
             }
         }
     }
