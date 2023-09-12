@@ -1,4 +1,4 @@
-using UnityEngine.SceneManagement;
+using System;
 using TMPro;
 using UnityEngine;
 
@@ -9,6 +9,8 @@ namespace Assets.Scripts.Player
     {
         [SerializeField] private float speed;
         [SerializeField] private float health;
+
+        public event Action OnPlayerDeath;
 
         [SerializeField] private TextMeshProUGUI healthText;
 
@@ -46,7 +48,7 @@ namespace Assets.Scripts.Player
 
             if (health <= 0)
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                OnPlayerDeath.Invoke();
             }
         }
 
