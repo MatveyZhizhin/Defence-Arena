@@ -14,7 +14,7 @@ namespace Assets.Scripts.Enemy
         {
             while (true)
             {
-                Hit();
+                enemyAnimator.SetTrigger("Attack");
                 yield return new WaitForSeconds(attackRate);
             }            
         }       

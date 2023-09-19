@@ -55,6 +55,7 @@ namespace Assets.Scripts.Player
             {
                 StopAllCoroutines();
                 isAttacking = false;
+                transform.rotation = transform.parent.rotation;
             }
         }
     }

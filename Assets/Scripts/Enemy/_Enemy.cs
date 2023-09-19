@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Assets.Scripts.Managers;
 using Assets.Scripts.Player;
@@ -10,6 +9,7 @@ namespace Assets.Scripts.Enemy
     {
         protected _Player _player;
         private SpawnManager spawnManager;
+        protected Animator enemyAnimator;
 
         [SerializeField] private float speed;
         [SerializeField] private float health;
@@ -28,6 +28,7 @@ namespace Assets.Scripts.Enemy
         {
             _player = FindObjectOfType<_Player>();
             spawnManager = FindObjectOfType<SpawnManager>();
+            TryGetComponent(out enemyAnimator);
         }
 
         private void Update()
