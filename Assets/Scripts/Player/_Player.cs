@@ -15,6 +15,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private TextMeshProUGUI healthText;
 
         private Rigidbody playerRigidbody;
+        private Animator animator;
         [SerializeField] private Joystick joystick;
 
         public float Health { get => health; set => health = value; }
@@ -24,6 +25,7 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
+            TryGetComponent(out animator);
         }
 
         private void Start()
@@ -57,8 +59,17 @@ namespace Assets.Scripts.Player
         {
             var movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
 
+           if (movement != new Vector3(0f, 0f, 0f))
+           {
+                animator.SetBool("isRunning", true);
+           }
+           else
+           {
+                animator.SetBool("isRunning", false);
+           }
+
             playerRigidbody.velocity = movement * speed;
-            transform.LookAt(movement + transform.position);
+            transform.LookAt(-movement + transform.position);
         }
     }
 }
