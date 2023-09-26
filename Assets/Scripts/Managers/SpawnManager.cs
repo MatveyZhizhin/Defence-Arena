@@ -21,13 +21,10 @@ namespace Assets.Scripts.Managers
         {
             foreach (var enemy in enemies)
             {
-                foreach (var currentEnemy in currentEnemies)
+                if (enemy != currentEnemies[currentEnemies.Count - 1])
                 {
-                    if (enemy != currentEnemy)
-                    {
-                        currentEnemies.Add(enemy);
-                        return;
-                    }
+                    currentEnemies.Add(enemy);
+                    return;
                 }
             }
         }

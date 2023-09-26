@@ -50,7 +50,7 @@ namespace Assets.Scripts.Player
 
             if (health <= 0)
             {
-                OnPlayerDeath.Invoke();
+                OnPlayerDeath?.Invoke();
             }
         }
 

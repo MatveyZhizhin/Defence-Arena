@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 42d5e2bd2e14191458b9204c7dcadf47
+guid: 5419f889282bdfe4f96a5153394850ff
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -34,10 +34,10 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: Attack
-      takeName: Armature|Armature|Armature|attack
-      internalID: 2036525787218282194
+      takeName: Armature|Armature.001|mixamo.com|Layer0
+      internalID: -6842666708266138392
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 80
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -57,10 +57,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.58064514
-        functionName: Hit
+      - time: 0.5161291
+        functionName: Fire
         data: 
-        objectReferenceParameter: {fileID: 6261427266992424657, guid: bb69caad6f58e46459ef35dc7c3f43b8, type: 3}
+        objectReferenceParameter: {fileID: 5483983884191410052, guid: a4a78fd2ebdc63a459ce5cffcb4bbcb1, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -69,11 +69,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Walk
-      takeName: Armature|Armature|Armature|walk
-      internalID: 1875891853626375771
+      name: Run
+      takeName: "Armature|\u0445\u043E\u0434\u044C\u0431\u0430"
+      internalID: -8631322087607528851
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 42
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

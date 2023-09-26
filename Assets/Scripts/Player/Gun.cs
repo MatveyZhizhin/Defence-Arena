@@ -6,6 +6,7 @@ namespace Assets.Scripts.Player
     public class Gun : MonoBehaviour
     {
         private IPlayer player;
+        [SerializeField] private float offset;
         [SerializeField] private _Bullet bullet;
         [SerializeField] private Transform[] firePoints;
         [SerializeField] private Joystick joystick;
@@ -41,7 +42,7 @@ namespace Assets.Scripts.Player
         {
             var rot = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
 
-            transform.rotation = Quaternion.Euler(5f, rot, 0f);
+            transform.rotation = Quaternion.Euler(0f, rot + offset, 0f);
 
             if (joystick.Horizontal != 0 || joystick.Vertical != 0)
             {

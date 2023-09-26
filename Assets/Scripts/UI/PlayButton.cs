@@ -21,7 +21,7 @@ namespace Assets.Scripts.UI
 
         private void Play()
         {           
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
