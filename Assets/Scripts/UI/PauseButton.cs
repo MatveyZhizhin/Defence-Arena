@@ -1,41 +1,30 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
-    [RequireComponent(typeof(Button))]
-    public class PauseButton : MonoBehaviour
+    public class PauseButton : PanelActivationButton
     {
-        private Button pauseButton;
-        [SerializeField] private GameObject pausePanel;
         [SerializeField] private Joystick[] joysticks;
-        private bool isPaused;
 
-        private void Awake()
+        protected override void EnablePanel()
         {
-            TryGetComponent(out pauseButton);
-        }
-
-        private void Start()
-        {
-            pauseButton?.onClick.AddListener(() => EnablePausePanel());
-        }
-
-        private void EnablePausePanel()
-        {
-            if (!isPaused)
+            if (!isPressed)
             {
-                foreach (var joystick in joysticks) joystick.gameObject.SetActive(false);                        
-                pausePanel.SetActive(true);
+                panel.SetActive(true);
                 Time.timeScale = 0f;
-                isPaused = true;
+                foreach (var joystick in joysticks) joystick.gameObject.SetActive(false);
+                isPressed = true;
             }
-            else
+        }
+
+        protected override void DisablePanel()
+        {
+            if (isPressed)
             {
-                foreach (var joystick in joysticks) joystick.gameObject.SetActive(true);
-                pausePanel.SetActive(false);
+                panel.SetActive(false);
                 Time.timeScale = 1f;
-                isPaused = false;
+                foreach (var joystick in joysticks) joystick.gameObject.SetActive(true);
+                isPressed = false;
             }
         }
     }

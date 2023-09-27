@@ -23,7 +23,7 @@ namespace Assets.Scripts.UI.Upgrades
         protected override void GenerateButton()
         {
             stats = (Stats)Random.Range(0, 3);
-            percent = Random.Range(1, 10);
+            percent = Random.Range(1, 50);
             percentText.SetText(percent.ToString());
             foreach (var icon in buttonIcons)
             {
