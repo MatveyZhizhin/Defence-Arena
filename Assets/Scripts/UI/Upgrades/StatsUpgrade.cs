@@ -1,6 +1,6 @@
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Upgrades
 {
@@ -23,13 +23,14 @@ namespace Assets.Scripts.UI.Upgrades
         protected override void GenerateButton()
         {
             stats = (Stats)Random.Range(0, 3);
-            percent = Random.Range(1, 50);
-            percentText.SetText(percent.ToString());
+            percent = Random.Range(1, 10);
+            percentText.SetText(percent.ToString() + "%");
             foreach (var icon in buttonIcons)
-            {
+            {                
                 if (icon.name == stats.ToString())
                 {
-                    upgradeButton.GetComponent<SpriteRenderer>().sprite = icon.sprite;
+                    upgradeButton.GetComponent<Image>().sprite = icon.sprite;
+                    upgradeButton.GetComponent<Image>().SetNativeSize();
                     break;
                 }
             }            
@@ -40,7 +41,7 @@ namespace Assets.Scripts.UI.Upgrades
             switch (stats)
             {
                 case Stats.Health:  
-                    player.Health += (percent * player.Health) / 100; 
+                    player.CurrentHealth += (percent * player.StartHealth) / 100; 
                     player.UpdateHealth();
                     break;
 

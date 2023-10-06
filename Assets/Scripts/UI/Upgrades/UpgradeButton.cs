@@ -21,8 +21,12 @@ namespace Assets.Scripts.UI.Upgrades
 
         private void Start()
         {
-            GenerateButton();
             upgradeButton?.onClick.AddListener(() => DoUpgrade());
+        }
+
+        private void OnEnable()
+        {
+            GenerateButton();
         }
 
         private void OnDisable()

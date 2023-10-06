@@ -8,6 +8,7 @@ namespace Assets.Scripts.UI
     public class ReturnButton : MonoBehaviour
     {
         private Button returnButton;
+        [SerializeField] private int sceneIndex;
 
         private void Awake()
         {
@@ -22,7 +23,7 @@ namespace Assets.Scripts.UI
         private void ReturnToMainMenu()
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(sceneIndex);
         }
     }
 }

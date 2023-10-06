@@ -8,7 +8,8 @@ namespace Assets.Scripts.Player
     public class _Player : MonoBehaviour, IPlayer
     {
         [SerializeField] private float speed;
-        [SerializeField] private float health;
+        [SerializeField] private float startHealth;
+        private float currentHealth;
 
         public event Action OnPlayerDeath;
 
@@ -18,7 +19,8 @@ namespace Assets.Scripts.Player
         private Animator animator;
         [SerializeField] private Joystick joystick;
 
-        public float Health { get => health; set => health = value; }
+        public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
+        public float StartHealth { get => startHealth;}
         [field: SerializeField] public float Damage { get; set; }
         public float Speed { get => speed; set => speed = value; }
 
@@ -30,12 +32,13 @@ namespace Assets.Scripts.Player
 
         private void Start()
         {
-            healthText.SetText($"Health: {health}");
+            currentHealth = startHealth;
+            healthText.SetText($"Health: {currentHealth}");         
         }
 
         public void UpdateHealth()
         {
-            healthText.SetText($"Health: {health}");
+            healthText.SetText($"Health: {currentHealth}");
         }
 
         private void FixedUpdate()
@@ -45,10 +48,10 @@ namespace Assets.Scripts.Player
 
         public void TakeDamage(float damage)
         {           
-            health -= damage;
-            healthText.SetText($"Health: {health}");
+            currentHealth -= damage;
+            healthText.SetText($"Health: {currentHealth}");
 
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 OnPlayerDeath?.Invoke();
             }

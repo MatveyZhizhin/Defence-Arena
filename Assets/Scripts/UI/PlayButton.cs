@@ -16,12 +16,7 @@ namespace Assets.Scripts.UI
 
         private void Start()
         {
-            playButton?.onClick.AddListener(() => Play());
-        }
-
-        private void Play()
-        {           
-            SceneManager.LoadScene(1);
-        }
+            playButton?.onClick.AddListener(() => SceneManager.LoadScene(1));
+        }       
     }
 }

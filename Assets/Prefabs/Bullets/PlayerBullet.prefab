@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8193764828225882704}
   - component: {fileID: 3223554176162662806}
   - component: {fileID: 4381916301516679628}
+  - component: {fileID: -8126758671568206715}
   m_Layer: 0
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -103,3 +104,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   bullet: 0
+--- !u!135 &-8126758671568206715
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7423411906886105699}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.50000006
+  m_Center: {x: 0, y: 0, z: 0}

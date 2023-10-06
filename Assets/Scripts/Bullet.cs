@@ -18,7 +18,7 @@ public class _Bullet : MonoBehaviour
 
     private float damage;
 
-    private void Update()
+    private void FixedUpdate()
     {
         Fire();
     }

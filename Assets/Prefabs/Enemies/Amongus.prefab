@@ -390,11 +390,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106a67f2ab1a801419094e1dd278c1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 7.1
   health: 6
   damage: 1
   minDistance: 3.06
-  attackDistance: 4.12
+  attackDistance: 3.52
   attackRate: 0.5
 --- !u!136 &3623337137603157451
 CapsuleCollider:
@@ -416,9 +416,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.9592562
-  m_Height: 5.132431
+  m_Height: 7.583453
   m_Direction: 1
-  m_Center: {x: 0.054821968, y: 2.5440269, z: 0.05644703}
+  m_Center: {x: 0.054821968, y: 3.769538, z: 0.05644703}
 --- !u!54 &-576017686531037463
 Rigidbody:
   m_ObjectHideFlags: 0
