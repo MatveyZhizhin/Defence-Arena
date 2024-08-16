@@ -1196,8 +1196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  health: 5
-  damage: 2
+  health: 10
+  damage: 6
   minDistance: 11
   attackDistance: 17.73
   attackRate: 1

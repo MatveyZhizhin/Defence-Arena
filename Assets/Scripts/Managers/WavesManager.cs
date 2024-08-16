@@ -2,6 +2,7 @@ using Assets.Scripts.Enemy;
 using Assets.Scripts.Managers;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class WavesManager : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class WavesManager : MonoBehaviour
     private void Start()
     {
         StartWave();
+        YandexGame.FullscreenShow();
     }
 
     private void Update()

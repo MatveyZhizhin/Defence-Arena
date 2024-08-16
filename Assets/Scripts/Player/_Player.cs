@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using YG;
 
 namespace Assets.Scripts.Player
 {
@@ -60,16 +61,26 @@ namespace Assets.Scripts.Player
 
         private void Move()
         {
-            var movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
+            Vector3 movement;
 
-           if (movement != new Vector3(0f, 0f, 0f))
-           {
+            if (SystemInfo.deviceType == DeviceType.Handheld)
+            {
+               movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
+            }
+            else
+            {
+                movement = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+                joystick.gameObject.SetActive(false);
+            }
+            
+            if (movement != new Vector3(0f, 0f, 0f))
+            {
                 animator.SetBool("isRunning", true);
-           }
-           else
-           {
+            }
+            else
+            {
                 animator.SetBool("isRunning", false);
-           }
+            }
 
             playerRigidbody.velocity = movement * speed;
             transform.LookAt(-movement + transform.position);

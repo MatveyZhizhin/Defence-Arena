@@ -40,24 +40,53 @@ namespace Assets.Scripts.Player
 
         private void MoveGun()
         {
-            var rot = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
+            float rot;
 
-            transform.rotation = Quaternion.Euler(0f, rot + offset, 0f);
-
-            if (joystick.Horizontal != 0 || joystick.Vertical != 0)
+            if (SystemInfo.deviceType == DeviceType.Handheld)
             {
-                if (!isAttacking)
+                rot = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
+
+
+                if (joystick.Horizontal != 0 || joystick.Vertical != 0)
                 {
-                    StartCoroutine(Fire());
-                    isAttacking = true;
-                }                              
+                    if (!isAttacking)
+                    {
+                        StartCoroutine(Fire());
+                        isAttacking = true;
+                    }
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    isAttacking = false;
+                    transform.rotation = transform.parent.rotation;
+                }
             }
             else
             {
-                StopAllCoroutines();
-                isAttacking = false;
-                transform.rotation = transform.parent.rotation;
+                joystick.gameObject.SetActive(false);
+
+                var difference = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+
+                rot = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+
+                if (Input.GetMouseButton(0))
+                {
+                    if (!isAttacking)
+                    {
+                        StartCoroutine(Fire());
+                        isAttacking = true;
+                    }
+                }
+                else
+                {
+                    StopAllCoroutines();
+                    isAttacking = false;
+                    transform.rotation = transform.parent.rotation;
+                }
             }
+
+            transform.rotation = Quaternion.Euler(0f, rot + offset, 0f);
         }
     }
 }

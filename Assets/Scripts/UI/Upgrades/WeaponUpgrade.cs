@@ -18,10 +18,10 @@ namespace Assets.Scripts.UI.Upgrades
             {
                 if (weapon.gameObject.activeInHierarchy)
                 {
-                    while (newWeapon == weapon)
+                    if (newWeapon == weapon)
                     {
-                        newWeapon = weapons[Random.Range(0, weapons.Length)];
-                    }
+                        GenerateButton();
+                    }                   
                 }
             }
 
