@@ -1,3 +1,4 @@
+using RimuruDev;
 using System;
 using TMPro;
 using UnityEngine;
@@ -19,6 +20,7 @@ namespace Assets.Scripts.Player
         private Rigidbody playerRigidbody;
         private Animator animator;
         [SerializeField] private Joystick joystick;
+        [SerializeField] private DeviceTypeDetector detector;
 
         public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
         public float StartHealth { get => startHealth;}
@@ -29,6 +31,7 @@ namespace Assets.Scripts.Player
         {
             TryGetComponent(out playerRigidbody);
             TryGetComponent(out animator);
+            detector = FindObjectOfType<DeviceTypeDetector>();
         }
 
         private void Start()
@@ -63,7 +66,7 @@ namespace Assets.Scripts.Player
         {
             Vector3 movement;
 
-            if (SystemInfo.deviceType == DeviceType.Handheld)
+            if (detector.CurrentDeviceType == CurrentDeviceType.WebMobile)
             {
                movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
             }

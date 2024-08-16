@@ -1,5 +1,7 @@
+using RimuruDev;
 using System.Collections;
 using UnityEngine;
+using YG;
 
 namespace Assets.Scripts.Player
 {
@@ -10,6 +12,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private _Bullet bullet;
         [SerializeField] private Transform[] firePoints;
         [SerializeField] private Joystick joystick;
+        private DeviceTypeDetector detector;
 
         private bool isAttacking;
 
@@ -18,6 +21,7 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             player = FindObjectOfType<_Player>();
+            detector = FindObjectOfType<DeviceTypeDetector>();
         }
 
         private void Update()
@@ -42,7 +46,7 @@ namespace Assets.Scripts.Player
         {
             float rot;
 
-            if (SystemInfo.deviceType == DeviceType.Handheld)
+            if (detector.CurrentDeviceType == CurrentDeviceType.WebMobile)
             {
                 rot = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
 
