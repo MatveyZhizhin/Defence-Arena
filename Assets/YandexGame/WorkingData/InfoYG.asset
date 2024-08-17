@@ -31,15 +31,15 @@ MonoBehaviour:
   loadAdWithDelaySimulation: 0
   testErrorOfRewardedAdsInEditor: 0
   saveCloud: 1
-  flush: 0
-  localSaveSync: 1
-  saveCloudInterval: 5
-  saveOnQuitGame: 0
+  flush: 1
+  localSaveSync: 0
+  saveCloudInterval: 0
+  saveOnQuitGame: 1
   quitGameParameters:
     objectName: YandexGame
-    methodName: _SaveProgress
+    methodName: SaveProgress
   leaderboardEnable: 1
-  saveScoreAnonymousPlayers: 1
+  saveScoreAnonymousPlayers: 0
   leaderboardSimulation:
   - technoName: advanced
     entries: 'Test LeaderBoard
@@ -93,7 +93,7 @@ MonoBehaviour:
   - technoName: simple
     entries: "Test LeaderBoard\nName: simple\n1. \u0441\u043A\u0440\u044B\u0442:
       10\n2. Max: 15\n3. Maria: 23"
-    isDefault: 0
+    isDefault: 1
     isInvertSortOrder: 0
     decimalOffset: 0
     type: numeric

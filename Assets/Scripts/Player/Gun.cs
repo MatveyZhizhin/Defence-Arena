@@ -12,6 +12,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private _Bullet bullet;
         [SerializeField] private Transform[] firePoints;
         [SerializeField] private Joystick joystick;
+        [SerializeField] private Animator cameraAnimator;
         private DeviceTypeDetector detector;
 
         private bool isAttacking;
@@ -35,6 +36,7 @@ namespace Assets.Scripts.Player
             {
                 foreach (var firePoint in firePoints)
                 {
+                    cameraAnimator.SetTrigger("Shake");
                    var newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                    newBullet.SetDamage(player.Damage);
                 }

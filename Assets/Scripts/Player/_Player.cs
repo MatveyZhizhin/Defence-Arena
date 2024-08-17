@@ -14,6 +14,7 @@ namespace Assets.Scripts.Player
         private float currentHealth;
 
         public event Action OnPlayerDeath;
+        public event Action OnPlayerRevive;
 
         [SerializeField] private TextMeshProUGUI healthText;
 
@@ -27,6 +28,8 @@ namespace Assets.Scripts.Player
         [field: SerializeField] public float Damage { get; set; }
         public float Speed { get => speed; set => speed = value; }
 
+        private const int ReviveAdId = 1;
+
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
@@ -37,12 +40,12 @@ namespace Assets.Scripts.Player
         private void Start()
         {
             currentHealth = startHealth;
-            healthText.SetText($"Health: {currentHealth}");         
+            healthText.SetText($"Çהמנמגüו: {currentHealth}");         
         }
 
         public void UpdateHealth()
         {
-            healthText.SetText($"Health: {currentHealth}");
+            healthText.SetText($"Çהמנמגüו: {currentHealth}");
         }
 
         private void FixedUpdate()
@@ -50,10 +53,20 @@ namespace Assets.Scripts.Player
             Move();
         }
 
+        private void OnEnable()
+        {
+            YandexGame.RewardVideoEvent += Revive;
+        }
+
+        private void OnDisable()
+        {
+            YandexGame.RewardVideoEvent -= Revive;
+        }
+
         public void TakeDamage(float damage)
         {           
             currentHealth -= damage;
-            healthText.SetText($"Health: {currentHealth}");
+            healthText.SetText($"Çהמנמגüו: {currentHealth}");
 
             if (currentHealth <= 0)
             {
@@ -87,6 +100,15 @@ namespace Assets.Scripts.Player
 
             playerRigidbody.velocity = movement * speed;
             transform.LookAt(-movement + transform.position);
+        }
+
+        private void Revive(int id)
+        {
+            if (ReviveAdId == id)
+            {
+                currentHealth = startHealth;
+                OnPlayerRevive?.Invoke();
+            }          
         }
     }
 }

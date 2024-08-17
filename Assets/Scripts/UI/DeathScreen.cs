@@ -1,7 +1,5 @@
 using Assets.Scripts.Player;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace Assets.Scripts.UI
 {
@@ -11,27 +9,40 @@ namespace Assets.Scripts.UI
         [SerializeField] private GameObject deathScreen;
 
         [SerializeField] private Joystick[] joysticks;
+        private GunDisabler disabler;
 
         private void Awake()
         {
-            player = FindObjectOfType<_Player>();           
+            player = FindObjectOfType<_Player>();   
+            disabler = FindObjectOfType<GunDisabler>();
         }
 
         private void Start()
         {
             player.OnPlayerDeath += EnableDeathScreen;
+            player.OnPlayerRevive += DisableDeathScreen;
         }
 
         private void EnableDeathScreen()
         {
             deathScreen.SetActive(true);
             foreach (var joystick in joysticks) joystick.gameObject.SetActive(false);
+            disabler.DisableGun();
             Time.timeScale = 0;
+        }
+
+        private void DisableDeathScreen()
+        {
+            deathScreen.SetActive(false);
+            foreach (var joystick in joysticks) joystick.gameObject.SetActive(true);
+            disabler.EnableGun();
+            Time.timeScale = 1;
         }
 
         private void OnEnable()
         {
             player.OnPlayerDeath -= EnableDeathScreen;
+            player.OnPlayerRevive -= DisableDeathScreen;
         }       
     }
 }

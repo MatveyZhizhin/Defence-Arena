@@ -11,6 +11,7 @@ namespace Assets.Scripts.Player
         public float StartHealth { get; }
         public float Damage { get; set; }
         public event Action OnPlayerDeath;
+        public event Action OnPlayerRevive;
         public void TakeDamage(float damage);
         public void UpdateHealth();
     }

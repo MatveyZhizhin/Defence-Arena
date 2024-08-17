@@ -1,3 +1,4 @@
+using Assets.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,6 +18,7 @@ namespace Assets.Scripts.UI
         private void Start()
         {
             playButton?.onClick.AddListener(() => SceneManager.LoadScene(1));
+            Time.timeScale = 1f;
         }       
     }
 }

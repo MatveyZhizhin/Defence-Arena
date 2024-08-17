@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Player;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using YG;
@@ -21,6 +22,13 @@ public class TimerBeforeAdsYG : MonoBehaviour
     private UnityEvent onShowTimer; 
     [SerializeField]
     private UnityEvent onHideTimer;
+
+    private GunDisabler disabler;
+
+    private void Awake()
+    {
+        disabler = FindObjectOfType<GunDisabler>();
+    }
 
     private void Start()
     {
@@ -45,6 +53,7 @@ public class TimerBeforeAdsYG : MonoBehaviour
             {
                 onShowTimer?.Invoke();
                 Time.timeScale = 0f;
+                disabler.DisableGun();
                 objSecCounter = 0;
                 if (secondsPanelObject)
                     secondsPanelObject.SetActive(true);
@@ -91,6 +100,7 @@ public class TimerBeforeAdsYG : MonoBehaviour
                 secondsPanelObject.SetActive(false);
                 onHideTimer?.Invoke();
                 Time.timeScale = 1f;
+                disabler.EnableGun();
                 objSecCounter = 0;
                 StartCoroutine(CheckTimerAd());
                 process = false;

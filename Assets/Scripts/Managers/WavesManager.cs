@@ -2,7 +2,7 @@ using Assets.Scripts.Enemy;
 using Assets.Scripts.Managers;
 using TMPro;
 using UnityEngine;
-using YG;
+using Assets.Scripts.Player;
 
 public class WavesManager : MonoBehaviour
 {
@@ -14,9 +14,11 @@ public class WavesManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI wavesCountText;
+    [SerializeField] private TextMeshProUGUI recordText;
 
     private SpawnManager spawnManager;
     private UpgradesButtonsManager upgradesButtonsManager;
+    private Record record;
 
     private bool IsWaveStopped;
 
@@ -24,12 +26,12 @@ public class WavesManager : MonoBehaviour
     {
         TryGetComponent(out spawnManager);
         TryGetComponent(out upgradesButtonsManager);
+        record = FindObjectOfType<Record>();
     }
 
     private void Start()
     {
         StartWave();
-        YandexGame.FullscreenShow();
     }
 
     private void Update()
@@ -55,6 +57,7 @@ public class WavesManager : MonoBehaviour
     private void StopWave()
     {
         StopAllCoroutines();
+        record.ChangeRecord(wavesCount);
         spawnManager.DeleteEnemies();
         upgradesButtonsManager.EnableButtons();
         IsWaveStopped = true;

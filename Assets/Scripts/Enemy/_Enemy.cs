@@ -19,6 +19,8 @@ namespace Assets.Scripts.Enemy
         [SerializeField] protected float attackDistance;
         [SerializeField] protected float attackRate;
 
+        [SerializeField] private ParticleSystem deathEffect;
+
 
         protected float currentDistance;
 
@@ -45,6 +47,7 @@ namespace Assets.Scripts.Enemy
             if (health <= 0)
             {
                 spawnManager.RemoveEnemy(this);
+                Instantiate(deathEffect, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
         }
