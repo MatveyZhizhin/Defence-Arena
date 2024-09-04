@@ -99,7 +99,6 @@ public class TimerBeforeAdsYG : MonoBehaviour
 
                 secondsPanelObject.SetActive(false);
                 onHideTimer?.Invoke();
-                Time.timeScale = 1f;
                 disabler.EnableGun();
                 objSecCounter = 0;
                 StartCoroutine(CheckTimerAd());

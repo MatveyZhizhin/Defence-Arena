@@ -34,7 +34,7 @@ MonoBehaviour:
   flush: 1
   localSaveSync: 0
   saveCloudInterval: 0
-  saveOnQuitGame: 1
+  saveOnQuitGame: 0
   quitGameParameters:
     objectName: YandexGame
     methodName: SaveProgress
@@ -297,7 +297,7 @@ MonoBehaviour:
   archivingBuild: 1
   logoImageFormat: 1
   backgroundImageFormat: 3
-  pixelRatioEnable: 0
+  pixelRatioEnable: 1
   pixelRatioValue: 1
   loadGameRun: 0
   staticRBTInGame: 0

@@ -1,4 +1,3 @@
-using RimuruDev;
 using System.Collections;
 using UnityEngine;
 using YG;
@@ -13,7 +12,9 @@ namespace Assets.Scripts.Player
         [SerializeField] private Transform[] firePoints;
         [SerializeField] private Joystick joystick;
         [SerializeField] private Animator cameraAnimator;
-        private DeviceTypeDetector detector;
+        [SerializeField] private AudioSource fireSound;
+
+        private CameraShakeController shakeController;
 
         private bool isAttacking;
 
@@ -22,7 +23,7 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             player = FindObjectOfType<_Player>();
-            detector = FindObjectOfType<DeviceTypeDetector>();
+            shakeController = FindObjectOfType<CameraShakeController>();
         }
 
         private void Update()
@@ -36,7 +37,11 @@ namespace Assets.Scripts.Player
             {
                 foreach (var firePoint in firePoints)
                 {
-                    cameraAnimator.SetTrigger("Shake");
+                    fireSound.Play();
+                    if (shakeController.IsCameraShakeEnabled)
+                    {
+                        cameraAnimator.SetTrigger("Shake");
+                    }                     
                    var newBullet = Instantiate(bullet, firePoint.position, firePoint.rotation);
                    newBullet.SetDamage(player.Damage);
                 }
@@ -48,7 +53,7 @@ namespace Assets.Scripts.Player
         {
             float rot;
 
-            if (detector.CurrentDeviceType == CurrentDeviceType.WebMobile)
+            if (YandexGame.EnvironmentData.isMobile)
             {
                 rot = Mathf.Atan2(joystick.Horizontal, joystick.Vertical) * Mathf.Rad2Deg;
 

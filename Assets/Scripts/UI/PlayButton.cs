@@ -1,4 +1,3 @@
-using Assets.Scripts.Managers;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;

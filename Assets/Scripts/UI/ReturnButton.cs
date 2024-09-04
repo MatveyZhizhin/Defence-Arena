@@ -22,7 +22,6 @@ namespace Assets.Scripts.UI
 
         private void ReturnToMainMenu()
         {
-            Time.timeScale = 1f;
             SceneManager.LoadScene(sceneIndex);
         }
     }

@@ -83,6 +83,16 @@ namespace Assets.Scripts.Enemy
             Gizmos.DrawWireSphere(transform.position, minDistance);
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(transform.position, attackDistance);
-        }       
+        }
+
+        public void AddHealth(int health)
+        {
+            this.health += health;
+        }
+
+        public void AddSpeed(float speed)
+        {
+            this.speed += speed;
+        }
     }
 }

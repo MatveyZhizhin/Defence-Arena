@@ -21,6 +21,7 @@ namespace Assets.Scripts.UI
         {
             player.OnPlayerDeath += EnableDeathScreen;
             player.OnPlayerRevive += DisableDeathScreen;
+            Time.timeScale = 1f;
         }
 
         private void EnableDeathScreen()
@@ -28,7 +29,7 @@ namespace Assets.Scripts.UI
             deathScreen.SetActive(true);
             foreach (var joystick in joysticks) joystick.gameObject.SetActive(false);
             disabler.DisableGun();
-            Time.timeScale = 0;
+            Time.timeScale = 0f;
         }
 
         private void DisableDeathScreen()
@@ -36,7 +37,7 @@ namespace Assets.Scripts.UI
             deathScreen.SetActive(false);
             foreach (var joystick in joysticks) joystick.gameObject.SetActive(true);
             disabler.EnableGun();
-            Time.timeScale = 1;
+            Time.timeScale = 1f;
         }
 
         private void OnEnable()

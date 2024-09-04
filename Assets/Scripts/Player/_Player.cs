@@ -1,4 +1,3 @@
-using RimuruDev;
 using System;
 using TMPro;
 using UnityEngine;
@@ -21,7 +20,6 @@ namespace Assets.Scripts.Player
         private Rigidbody playerRigidbody;
         private Animator animator;
         [SerializeField] private Joystick joystick;
-        [SerializeField] private DeviceTypeDetector detector;
 
         public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
         public float StartHealth { get => startHealth;}
@@ -34,7 +32,6 @@ namespace Assets.Scripts.Player
         {
             TryGetComponent(out playerRigidbody);
             TryGetComponent(out animator);
-            detector = FindObjectOfType<DeviceTypeDetector>();
         }
 
         private void Start()
@@ -66,6 +63,11 @@ namespace Assets.Scripts.Player
         public void TakeDamage(float damage)
         {           
             currentHealth -= damage;
+            if (damage > currentHealth)
+            {
+                currentHealth = 0;
+            }
+
             healthText.SetText($"Çהמנמגüו: {currentHealth}");
 
             if (currentHealth <= 0)
@@ -79,7 +81,7 @@ namespace Assets.Scripts.Player
         {
             Vector3 movement;
 
-            if (detector.CurrentDeviceType == CurrentDeviceType.WebMobile)
+            if (YandexGame.EnvironmentData.isMobile)
             {
                movement = new Vector3(joystick.Horizontal, 0f, joystick.Vertical);
             }
@@ -107,6 +109,7 @@ namespace Assets.Scripts.Player
             if (ReviveAdId == id)
             {
                 currentHealth = startHealth;
+                healthText.SetText($"Çהמנמגüו: {currentHealth}");
                 OnPlayerRevive?.Invoke();
             }          
         }

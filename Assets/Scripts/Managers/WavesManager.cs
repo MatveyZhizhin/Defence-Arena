@@ -43,7 +43,6 @@ public class WavesManager : MonoBehaviour
     {
         timeBtwWaves = startTimeBtwWaves;
         IsWaveStopped = false;
-        spawnManager.SpawnRate -= 0.05f; 
         upgradesButtonsManager.OnUpgrade -= StartWave;
         StartCoroutine(spawnManager.Spawn());
         wavesCount++;
@@ -59,6 +58,9 @@ public class WavesManager : MonoBehaviour
         StopAllCoroutines();
         record.ChangeRecord(wavesCount);
         spawnManager.DeleteEnemies();
+        spawnManager.AdditionalHealth += 1;
+        spawnManager.AdditionalSpeed += 0.5f;
+        spawnManager.SpawnRate -= 0.05f;
         upgradesButtonsManager.EnableButtons();
         IsWaveStopped = true;
         upgradesButtonsManager.OnUpgrade += StartWave;

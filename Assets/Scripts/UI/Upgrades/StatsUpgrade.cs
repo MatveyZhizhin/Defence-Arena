@@ -15,7 +15,7 @@ namespace Assets.Scripts.UI.Upgrades
     {
         private Stats stats;
             
-        private int percent;
+        private int value;
 
 
         [SerializeField] private TextMeshProUGUI percentText;             
@@ -23,8 +23,8 @@ namespace Assets.Scripts.UI.Upgrades
         protected override void GenerateButton()
         {
             stats = (Stats)Random.Range(0, 3);
-            percent = Random.Range(1, 10);
-            percentText.SetText(percent.ToString() + "%");
+            value = Random.Range(2, 6);
+            percentText.SetText(value.ToString());
             foreach (var icon in buttonIcons)
             {                
                 if (icon.name == stats.ToString())
@@ -40,17 +40,17 @@ namespace Assets.Scripts.UI.Upgrades
         {
             switch (stats)
             {
-                case Stats.Health:  
-                    player.CurrentHealth += (percent * player.StartHealth) / 100; 
+                case Stats.Health:
+                    player.CurrentHealth += value;
                     player.UpdateHealth();
                     break;
 
                 case Stats.Damage:
-                    player.Damage += (percent * player.Damage) / 100;
+                    player.Damage += value;
                     break;
 
                 case Stats.Speed:
-                    player.Speed += (percent * player.Speed) / 100;
+                    player.Speed += value;
                     break;
             }
             IsUpgraded = true;

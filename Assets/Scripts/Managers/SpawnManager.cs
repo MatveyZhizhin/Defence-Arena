@@ -17,6 +17,9 @@ namespace Assets.Scripts.Managers
 
         public float SpawnRate { get => spawnRate; set => spawnRate = value; }
 
+        public int AdditionalHealth { get; set; }
+        public float AdditionalSpeed { get; set; }
+
         public void AddEnemy(_Enemy[] enemies)
         {
             foreach (var enemy in enemies)
@@ -35,6 +38,8 @@ namespace Assets.Scripts.Managers
             {
                 var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
                 spawnedEnemies.Add(newEnemy);
+                newEnemy.AddHealth(AdditionalHealth);
+                newEnemy.AddSpeed(AdditionalSpeed);
                 yield return new WaitForSeconds(spawnRate);
             }
         }

@@ -8,24 +8,15 @@ namespace Assets.Scripts.UI
         [SerializeField] private Joystick[] joysticks;
         [SerializeField] private GunDisabler disabler;
 
-        private bool isPaused;
-
-        private void Update()
-        {
-            if (isPaused)
-            {
-                Time.timeScale = 0f;
-                disabler.DisableGun();
-            }
-        }
 
         protected override void EnablePanel()
         {
             if (!isPressed)
             {
                 panel.SetActive(true);
-                isPaused = true;               
+                disabler.DisableGun();
                 foreach (var joystick in joysticks) joystick.gameObject.SetActive(false);
+                Time.timeScale = 0f;
                 isPressed = true;
             }
         }
@@ -35,7 +26,6 @@ namespace Assets.Scripts.UI
             if (isPressed)
             {
                 panel.SetActive(false);
-                isPaused = false;
                 Time.timeScale = 1f;
                 disabler.EnableGun();
                 foreach (var joystick in joysticks) joystick.gameObject.SetActive(true);
