@@ -2,10 +2,20 @@ using UnityEngine;
 
 public class CameraShakeController : MonoBehaviour
 {
-    public bool IsCameraShakeEnabled { get; private set; } = true;
+    [SerializeField] private Animator _cameraAnimator;
+
+    private bool _isCameraShakeEnabled;
 
     public void ToggleCameraShake(bool toggle)
     {
-       IsCameraShakeEnabled = toggle;
+       _isCameraShakeEnabled = toggle;
+    }
+
+    public void ShakeCamera()
+    {
+        if (_isCameraShakeEnabled)
+        {
+            _cameraAnimator.SetTrigger("Shake");
+        }
     }
 }

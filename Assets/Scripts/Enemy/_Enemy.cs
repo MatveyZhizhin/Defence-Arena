@@ -24,7 +24,7 @@ namespace Assets.Scripts.Enemy
 
         protected float currentDistance;
 
-        private bool isAttacking;        
+        private bool isAttacking;
 
         private void Awake()
         {

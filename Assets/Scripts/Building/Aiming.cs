@@ -6,15 +6,28 @@ namespace Building
 
     public class Aiming : MonoBehaviour
     {
-        [SerializeField] private Transform _gun;
+        [SerializeField] private Transform _movableObject;
         [SerializeField] private float _attackDistance;
 
+        private bool _isAimming;
+        public bool IsAimming => _isAimming;
 
         void Update()
         {
-            _gun.LookAt(GetNearestEnemyPhysics());
+            Aim();
         }
 
+        private void Aim()
+        {
+            if (GetNearestEnemyPhysics() == null)
+            {
+                _isAimming = false;
+                return;
+            }
+
+            _movableObject.LookAt(GetNearestEnemyPhysics().transform);
+            _isAimming = true;           
+        }
 
         private Transform GetNearestEnemyPhysics()
         {

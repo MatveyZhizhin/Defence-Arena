@@ -6,7 +6,7 @@ using YG;
 namespace Assets.Scripts.Player
 {
     [RequireComponent(typeof(Rigidbody))]
-    public class _Player : MonoBehaviour, IPlayer
+    public class _Player : Attacker, IPlayer
     {
         [SerializeField] private float speed;
         [SerializeField] private float startHealth;
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Player
 
         public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
         public float StartHealth { get => startHealth;}
-        [field: SerializeField] public float Damage { get; set; }
+
         public float Speed { get => speed; set => speed = value; }
 
         private const int ReviveAdId = 1;
