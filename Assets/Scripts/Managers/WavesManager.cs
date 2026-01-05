@@ -3,24 +3,23 @@ using Assets.Scripts.Managers;
 using TMPro;
 using UnityEngine;
 using Assets.Scripts.Player;
+using System;
 
 public class WavesManager : MonoBehaviour
 {
     [SerializeField] private _Enemy[] allEnemies;
-    [SerializeField] private float startTimeBtwWaves;
+    [SerializeField] private int enemiesAmount;
 
-    private float timeBtwWaves;
     private int wavesCount;
 
     [SerializeField] private TextMeshProUGUI timerText;
     [SerializeField] private TextMeshProUGUI wavesCountText;
-    [SerializeField] private TextMeshProUGUI recordText;
 
     private SpawnManager spawnManager;
     private UpgradesButtonsManager upgradesButtonsManager;
     private Record record;
 
-    private bool IsWaveStopped;
+    public event Action WaveEnded;
 
     private void Awake()
     {
@@ -34,17 +33,10 @@ public class WavesManager : MonoBehaviour
         StartWave();
     }
 
-    private void Update()
-    {
-        DicreaseTimer();
-    }
-
     private void StartWave()
     {
-        timeBtwWaves = startTimeBtwWaves;
-        IsWaveStopped = false;
         upgradesButtonsManager.OnUpgrade -= StartWave;
-        StartCoroutine(spawnManager.Spawn());
+        StartCoroutine(spawnManager.Spawn(enemiesAmount));
         wavesCount++;
         wavesCountText.SetText($"Волна: {wavesCount}");
         if (wavesCount % 5 == 0)
@@ -55,30 +47,22 @@ public class WavesManager : MonoBehaviour
 
     private void StopWave()
     {
-        StopAllCoroutines();
+        WaveEnded?.Invoke();
         record.ChangeRecord(wavesCount);
-        spawnManager.DeleteEnemies();
         spawnManager.AdditionalHealth += 1;
         spawnManager.AdditionalSpeed += 0.5f;
-        spawnManager.SpawnRate -= 0.05f;
+        enemiesAmount += 5;
         upgradesButtonsManager.EnableButtons();
-        IsWaveStopped = true;
         upgradesButtonsManager.OnUpgrade += StartWave;
     }
 
-    private void DicreaseTimer()
+    private void OnEnable()
     {
-        if (timeBtwWaves <= 0)
-        { 
-            if (!IsWaveStopped)
-            {
-                StopWave();
-            }         
-        }
-        else
-        {
-            timeBtwWaves -= Time.deltaTime;
-            timerText.SetText(Mathf.Round(timeBtwWaves).ToString());
-        }
+        spawnManager.EnemiesDied += StopWave;
+    }
+
+    private void OnDisable()
+    {
+        spawnManager.EnemiesDied -= StopWave;
     }
 }

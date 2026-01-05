@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6589f717d0ad17544a270f2c0cc1433a
+guid: aa519314eb073444ebb45e1f595a62de
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,35 +33,6 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: BearWalkingAnim (1)
-      takeName: BearWalkingAnim
-      internalID: 84916737928180629
-      firstFrame: 0
-      lastFrame: 45
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
       name: BearAttackAnim
       takeName: BearAttackAnim
       internalID: -7411451508559134006
@@ -85,17 +56,24 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.73374313
+        functionName: Hit
+        data: 
+        objectReferenceParameter: {fileID: 3711965657489051446, guid: b239514859bda574aa895405a107df25, type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: BearIdleAnim
-      takeName: BearIdleAnim
+      name: BearWalkingAnim
+      takeName: BearWalkingAnim
       internalID: -8788489796875515245
       firstFrame: 0
-      lastFrame: 60
+      lastFrame: 45
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

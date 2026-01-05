@@ -9,7 +9,7 @@ namespace  Assets.Scripts.UI.Upgrades
         [SerializeField] private Gun[] guns;
         [SerializeField] private Gun rewardedGun;
 
-        [SerializeField] private Timer rewardTimer;
+        private WavesManager wavesManager;
 
         private const int rewardedGunId = 2;
 
@@ -23,13 +23,13 @@ namespace  Assets.Scripts.UI.Upgrades
         private void OnEnable()
         {
             YandexGame.RewardVideoEvent += EnableRewardedGun;
-            rewardTimer.Ended -= DisableRewardedGun;          
+            spawnManager.EnemiesDied -= DisableRewardedGun;
         }
 
         private void OnDisable()
         {
             YandexGame.RewardVideoEvent -= EnableRewardedGun;
-            rewardTimer.Ended += DisableRewardedGun;
+            spawnManager.EnemiesDied += DisableRewardedGun;
             IsUpgraded = false;
         }
 
@@ -48,12 +48,11 @@ namespace  Assets.Scripts.UI.Upgrades
                     }
                 }
                 IsUpgraded = true;
-                rewardTimer.StartTimer();
             }          
         }
 
         private void DisableRewardedGun()
-        {
+        {          
             rewardedGun.gameObject.SetActive(false);
             currentGun.gameObject.SetActive(true);
         }

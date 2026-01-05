@@ -195,7 +195,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   lifeTime: 5
-  distance: 0.5
+  distance: 0.74
   solid:
     serializedVersion: 2
     m_Bits: 8
@@ -267,7 +267,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.99
     widthCurve:
       serializedVersion: 2
       m_Curve:

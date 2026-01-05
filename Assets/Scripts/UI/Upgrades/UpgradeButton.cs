@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Player;
+﻿using Assets.Scripts.Managers;
+using Assets.Scripts.Player;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,7 @@ namespace Assets.Scripts.UI.Upgrades
         [SerializeField] protected Image[] buttonIcons;
         protected Button upgradeButton;
         protected _Player player;
+        protected SpawnManager spawnManager;
 
         public bool IsUpgraded { get; protected set; }
 
@@ -17,6 +19,7 @@ namespace Assets.Scripts.UI.Upgrades
         {
             upgradeButton = GetComponent<Button>();
             player = FindObjectOfType<_Player>();
+            spawnManager = FindObjectOfType<SpawnManager>();
         }
 
         private void Start()
