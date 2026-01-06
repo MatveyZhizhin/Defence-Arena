@@ -7869,6 +7869,7 @@ MonoBehaviour:
   - {fileID: 805086956}
   currentEnemies:
   - {fileID: 922267131876284013, guid: 00bcbde0fab5a1648859eae86412ab53, type: 3}
+  - {fileID: 4985860344852583493, guid: 3dd78dffb3fbc644da93fac9383611ed, type: 3}
   remainingEnemiesText: {fileID: 190985786}
   spawnRate: 0.5
 --- !u!4 &2140816034
