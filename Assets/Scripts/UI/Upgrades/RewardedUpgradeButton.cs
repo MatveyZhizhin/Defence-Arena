@@ -54,7 +54,7 @@ namespace  Assets.Scripts.UI.Upgrades
         private void DisableRewardedGun()
         {          
             rewardedGun.gameObject.SetActive(false);
-            currentGun.gameObject.SetActive(true);
+            currentGun?.gameObject.SetActive(true);
         }
 
         protected override void GenerateButton()
