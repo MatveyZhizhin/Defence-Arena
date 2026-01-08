@@ -12,7 +12,7 @@ namespace Assets.Scripts.Managers
 {
     public class SpawnManager : MonoBehaviour
     {
-        [SerializeField] private SpawnPointTrigger[] spawnPoints;
+        [SerializeField] private Transform[] spawnPoints;
         [SerializeField] private List<_Enemy> currentEnemies;
         [SerializeField] private TextMeshProUGUI remainingEnemiesText;
 
@@ -46,14 +46,8 @@ namespace Assets.Scripts.Managers
             remainingEnemiesAmount = amount;
 
             for (int i = 0; i < amount; i++)
-            {
-                var spawnPointIndex = Random.Range(0, spawnPoints.Length);
-                while (!spawnPoints[spawnPointIndex].HasSpace)
-                {
-                    spawnPointIndex = Random.Range(0, spawnPoints.Length);
-                }
-
-                var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
+            {           
+                var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
                 spawnedEnemies.Add(newEnemy);
                 newEnemy.AddHealth(AdditionalHealth);
                 newEnemy.AddSpeed(AdditionalSpeed);
