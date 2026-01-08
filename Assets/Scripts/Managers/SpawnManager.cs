@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using Triggers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -11,7 +12,7 @@ namespace Assets.Scripts.Managers
 {
     public class SpawnManager : MonoBehaviour
     {
-        [SerializeField] private Transform[] spawnPoints;
+        [SerializeField] private SpawnPointTrigger[] spawnPoints;
         [SerializeField] private List<_Enemy> currentEnemies;
         [SerializeField] private TextMeshProUGUI remainingEnemiesText;
 
@@ -43,9 +44,16 @@ namespace Assets.Scripts.Managers
         {
             remainingEnemiesText.SetText(amount.ToString());
             remainingEnemiesAmount = amount;
+
             for (int i = 0; i < amount; i++)
             {
-                var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
+                var spawnPointIndex = Random.Range(0, spawnPoints.Length);
+                while (!spawnPoints[spawnPointIndex].HasSpace)
+                {
+                    spawnPointIndex = Random.Range(0, spawnPoints.Length);
+                }
+
+                var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[spawnPointIndex].transform.position, Quaternion.identity);
                 spawnedEnemies.Add(newEnemy);
                 newEnemy.AddHealth(AdditionalHealth);
                 newEnemy.AddSpeed(AdditionalSpeed);
@@ -55,6 +63,8 @@ namespace Assets.Scripts.Managers
 
         public void RemoveEnemy(_Enemy enemy)
         {
+            if (!spawnedEnemies.Contains(enemy))
+                return;
             spawnedEnemies.Remove(enemy);
             remainingEnemiesAmount--;
             remainingEnemiesText.SetText(remainingEnemiesAmount.ToString());

@@ -46,6 +46,7 @@ public class _Bullet : MonoBehaviour
                     enemy.TakeDamage(damage);
                 }
                 Destroy(gameObject);
+                return;
             }               
         }
         Destroy(gameObject, lifeTime);
