@@ -11,12 +11,18 @@ namespace Bonuses
         // Start is called before the first frame update
         void Start()
         {
-
+            StartCoroutine(SpawnBonuses());
         }
 
         private IEnumerator SpawnBonuses()
         {
-            var pos = Random.insideUnitSphere();
+            while (true)
+            {
+                var pos = Random.insideUnitSphere * _radius;
+                var obj = Instantiate(_bonusPrefab[Random.Range(0, _bonusPrefab.Length)], pos, Quaternion.identity);
+
+                yield return new WaitForSeconds(_spawnRate);
+            }
         }
 
     }
