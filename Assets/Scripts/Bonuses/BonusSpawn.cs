@@ -7,7 +7,7 @@ namespace Bonuses
     {
         [SerializeField] private GameObject[] _bonusPrefab;
         [SerializeField] private float _spawnRate;
-        [SerializeField] private float _radius;
+        [SerializeField] private Transform[] _spawnPoint;
         // Start is called before the first frame update
         void Start()
         {
@@ -18,9 +18,7 @@ namespace Bonuses
         {
             while (true)
             {
-                var pos = Random.insideUnitSphere * _radius;
-                var obj = Instantiate(_bonusPrefab[Random.Range(0, _bonusPrefab.Length)], pos, Quaternion.identity);
-
+                var obj = Instantiate(_bonusPrefab[Random.Range(0, _bonusPrefab.Length)], _spawnPoint[Random.Range(0, _spawnPoint.Length)].position , Quaternion.identity);
                 yield return new WaitForSeconds(_spawnRate);
             }
         }
