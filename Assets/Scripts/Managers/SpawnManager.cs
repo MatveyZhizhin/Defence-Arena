@@ -1,10 +1,9 @@
 using Assets.Scripts.Enemy;
+using ScriptableObjects;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
-using Triggers;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -20,6 +19,7 @@ namespace Assets.Scripts.Managers
         private int remainingEnemiesAmount;
 
         [SerializeField] private float spawnRate;
+        [SerializeField] private Chance enemiesChances;
 
         public float SpawnRate { get => spawnRate; set => spawnRate = value; }
 
@@ -46,8 +46,10 @@ namespace Assets.Scripts.Managers
             remainingEnemiesAmount = amount;
 
             for (int i = 0; i < amount; i++)
-            {           
-                var newEnemy = Instantiate(currentEnemies[Random.Range(0, currentEnemies.Count)], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
+            {
+                var enemyIndex = Randomizer.GetRandomIndexWithChance(enemiesChances.Chances.GetRange(0, currentEnemies.Count));
+                print(enemyIndex);
+                var newEnemy = Instantiate(currentEnemies[enemyIndex], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
                 spawnedEnemies.Add(newEnemy);
                 newEnemy.AddHealth(AdditionalHealth);
                 newEnemy.AddSpeed(AdditionalSpeed);

@@ -1,3 +1,4 @@
+using ScriptableObjects;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,11 +19,12 @@ namespace Assets.Scripts.UI.Upgrades
         private int value;
 
 
-        [SerializeField] private TextMeshProUGUI percentText;             
+        [SerializeField] private TextMeshProUGUI percentText;
+        [SerializeField] private Chance statsChances;
 
         protected override void GenerateButton()
         {
-            stats = (Stats)Random.Range(0, 3);
+            stats = (Stats)Randomizer.GetRandomIndexWithChance(statsChances.Chances);
             value = Random.Range(2, 6);
             percentText.SetText(value.ToString());
             foreach (var icon in buttonIcons)

@@ -6471,6 +6471,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2272580591677273089, guid: e0e1f528a88725e45a369deb30819c23, type: 3}
+      propertyPath: weaponChances.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2272580591677273089, guid: e0e1f528a88725e45a369deb30819c23, type: 3}
       propertyPath: buttonIcons.Array.data[0]
       value: 
       objectReference: {fileID: 5186461134437382450, guid: 19f19425bd4ec1c4ba6b3ba9391b9b21, type: 3}
@@ -6482,6 +6486,18 @@ PrefabInstance:
       propertyPath: buttonIcons.Array.data[2]
       value: 
       objectReference: {fileID: 5240914711778533498, guid: c8197ae4d5cd554418ca23402855a912, type: 3}
+    - target: {fileID: 2272580591677273089, guid: e0e1f528a88725e45a369deb30819c23, type: 3}
+      propertyPath: weaponChances.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: e4f499e9aee84f547a7eda4e740a5565, type: 2}
+    - target: {fileID: 2272580591677273089, guid: e0e1f528a88725e45a369deb30819c23, type: 3}
+      propertyPath: weaponChances.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: f291eee2ca17e6b47a77d096780c21ef, type: 2}
+    - target: {fileID: 2272580591677273089, guid: e0e1f528a88725e45a369deb30819c23, type: 3}
+      propertyPath: weaponChances.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: df328d890392bcc449d2e10d08a07829, type: 2}
     - target: {fileID: 7604179348370244875, guid: e0e1f528a88725e45a369deb30819c23, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

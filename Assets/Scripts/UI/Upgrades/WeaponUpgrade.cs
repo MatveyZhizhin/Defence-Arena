@@ -1,18 +1,21 @@
 using UnityEngine;
 using Assets.Scripts.Player;
 using UnityEngine.UI;
+using ScriptableObjects;
 
 namespace Assets.Scripts.UI.Upgrades
 {
+
     public class WeaponUpgrade : UpgradeButton
     {
         [SerializeField] private Gun[] weapons;
+        [SerializeField] private Chance weaponChances;
 
         private Gun newWeapon;
 
         protected override void GenerateButton()
         {
-            newWeapon = weapons[Random.Range(0, weapons.Length)];
+            newWeapon = weapons[Randomizer.GetRandomIndexWithChance(weaponChances.Chances)];
 
             foreach (var weapon in weapons)
             {
@@ -48,6 +51,6 @@ namespace Assets.Scripts.UI.Upgrades
                 }
             }
             IsUpgraded = true;
-        }       
+        }      
     }
 }
