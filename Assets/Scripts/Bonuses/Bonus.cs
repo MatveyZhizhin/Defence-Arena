@@ -7,7 +7,7 @@ namespace Bonuses
     public abstract class Bonus : Trigger<_Player>
     {
         protected _Player _player;
-        [SerializeField] protected float _meaning;
+        [SerializeField] protected float _value;
         [SerializeField] protected float _lifeTime;
 
         private void Start()

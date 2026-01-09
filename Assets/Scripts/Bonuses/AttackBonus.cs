@@ -5,7 +5,7 @@ namespace Bonuses
     {
         protected override void UseBuff()
         {
-            _player.Damage += _meaning;
+            _player.Damage += _value;
         }
         
     }

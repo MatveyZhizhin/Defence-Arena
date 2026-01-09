@@ -4,7 +4,7 @@ namespace Bonuses
     {
         protected override void UseBuff()
         {
-            _player.CurrentHealth += _meaning;
+            _player.CurrentHealth += _value;
             _player.UpdateHealth();
         }
     }
