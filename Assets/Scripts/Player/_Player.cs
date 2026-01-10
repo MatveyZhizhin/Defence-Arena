@@ -37,12 +37,12 @@ namespace Assets.Scripts.Player
         private void Start()
         {
             currentHealth = startHealth;
-            healthText.SetText($"Çהמנמגüו: {currentHealth}");         
+            healthText.SetText(currentHealth.ToString());         
         }
 
         public void UpdateHealth()
         {
-            healthText.SetText($"Çהמנמגüו: {currentHealth}");
+            healthText.SetText(currentHealth.ToString());
         }
 
         private void FixedUpdate()
@@ -68,7 +68,7 @@ namespace Assets.Scripts.Player
                 currentHealth = 0;
             }
 
-            healthText.SetText($"Çהמנמגüו: {currentHealth}");
+            healthText.SetText(currentHealth.ToString());
 
             if (currentHealth <= 0)
             {
@@ -109,7 +109,7 @@ namespace Assets.Scripts.Player
             if (ReviveAdId == id)
             {
                 currentHealth = startHealth;
-                healthText.SetText($"Çהמנמגüו: {currentHealth}");
+                healthText.SetText(currentHealth.ToString());
                 OnPlayerRevive?.Invoke();
             }          
         }

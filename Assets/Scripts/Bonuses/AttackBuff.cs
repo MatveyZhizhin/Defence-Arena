@@ -1,7 +1,7 @@
 
 namespace Bonuses
 {
-    public class AttackBonus: Bonus
+    public class AttackBuff: Bonus
     {
         protected override void UseBuff()
         {

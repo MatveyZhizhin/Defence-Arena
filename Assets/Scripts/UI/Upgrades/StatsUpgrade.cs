@@ -26,7 +26,7 @@ namespace Assets.Scripts.UI.Upgrades
         {
             stats = (Stats)Randomizer.GetRandomIndexWithChance(statsChances.Chances);
             value = Random.Range(2, 6);
-            percentText.SetText(value.ToString());
+            percentText.SetText("+" + value);
             foreach (var icon in buttonIcons)
             {                
                 if (icon.name == stats.ToString())

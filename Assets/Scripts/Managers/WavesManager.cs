@@ -38,7 +38,7 @@ public class WavesManager : MonoBehaviour
         upgradesButtonsManager.OnUpgrade -= StartWave;
         StartCoroutine(spawnManager.Spawn(enemiesAmount));
         wavesCount++;
-        wavesCountText.SetText($"Волна: {wavesCount}");
+        wavesCountText.SetText(wavesCount.ToString());
         if (wavesCount % 5 == 0)
         {
             spawnManager.AddEnemy(allEnemies);
