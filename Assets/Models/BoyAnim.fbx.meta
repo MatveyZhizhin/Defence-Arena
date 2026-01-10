@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 81b4a2fae74ce504485cda3d5985c185
+guid: b59cbb621c8a1a94e85464fd2b37840a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,9 +33,9 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: girlyWalking
-      takeName: girlyWalking
-      internalID: -2511428203723950684
+      name: noobWalking
+      takeName: noobWalking
+      internalID: 4041863949648605903
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0

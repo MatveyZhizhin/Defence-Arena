@@ -86,7 +86,7 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.57415605
+      - time: 0.54727435
         functionName: Fire
         data: 
         objectReferenceParameter: {fileID: 1749618517596740953, guid: e146df0062a5a9148b13320912ed3ff4, type: 3}
