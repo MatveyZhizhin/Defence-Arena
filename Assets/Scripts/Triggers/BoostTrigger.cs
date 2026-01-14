@@ -10,7 +10,7 @@ namespace Triggers
         protected override void OnEnter(_Player triggered)
         {
             print(triggered);
-           // triggered.GetComponent<Rigidbody>().AddTorque(transform.position);
+            triggered.GetComponent<Rigidbody>().AddForce(transform.forward * _boostForce, ForceMode.Acceleration);
         }
     }
 }

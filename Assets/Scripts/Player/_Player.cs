@@ -122,7 +122,7 @@ namespace Assets.Scripts.Player
                 GetActiveAnimator().SetBool("isRunning", false);
             }
 
-            playerRigidbody.velocity = movement * speed;
+            playerRigidbody.MovePosition(transform.position + movement * speed * Time.fixedDeltaTime);
             transform.LookAt(movement + transform.position);
         }
 
