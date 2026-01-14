@@ -21,11 +21,6 @@ namespace Assets.Scripts.Managers
         [SerializeField] private float spawnRate;
         [SerializeField] private Chance enemiesChances;
 
-        public float SpawnRate { get => spawnRate; set => spawnRate = value; }
-
-        public int AdditionalHealth { get; set; }
-        public float AdditionalSpeed { get; set; }
-
         public event Action EnemiesDied;
 
         public void AddEnemy(_Enemy[] enemies)
@@ -40,7 +35,7 @@ namespace Assets.Scripts.Managers
             }
         }
 
-        public IEnumerator Spawn(int amount)
+        public IEnumerator Spawn(int amount, int healthMultiplier = 1, float speedMultiplier = 1)
         {
             remainingEnemiesText.SetText(amount.ToString());
             remainingEnemiesAmount = amount;
@@ -48,11 +43,10 @@ namespace Assets.Scripts.Managers
             for (int i = 0; i < amount; i++)
             {
                 var enemyIndex = Randomizer.GetRandomIndexWithChance(enemiesChances.Chances.GetRange(0, currentEnemies.Count));
-                print(enemyIndex);
                 var newEnemy = Instantiate(currentEnemies[enemyIndex], spawnPoints[Random.Range(0, spawnPoints.Length)].position, Quaternion.identity);
                 spawnedEnemies.Add(newEnemy);
-                newEnemy.AddHealth(AdditionalHealth);
-                newEnemy.AddSpeed(AdditionalSpeed);
+                newEnemy.IncreaseHealth(healthMultiplier);
+                newEnemy.IncreaseSpeed(speedMultiplier);
                 yield return new WaitForSeconds(spawnRate);
             }           
         }

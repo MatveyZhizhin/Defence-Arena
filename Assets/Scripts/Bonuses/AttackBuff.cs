@@ -1,12 +1,15 @@
+using Assets.Scripts.Player;
+using UnityEngine;
 
 namespace Bonuses
 {
     public class AttackBuff: Bonus
     {
-        protected override void UseBuff()
+        [SerializeField] private float _duration;
+
+        protected override void UseBuff(_Player player)
         {
-            _player.Damage += _value;
+            player.StartCoroutine(player.AddDamageTemporarily(_value, _duration));
         }
-        
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803995267170091291}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MouthUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 931817006526593716}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5367814407636674605}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ears_R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4602172108280967961}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_R.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4166601671142068705}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1803151342552239373}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 342064162747911875}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: MouthUp.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -239,7 +239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2325701435390473957}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -271,7 +271,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4660324796698160210}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_R.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8018608224257465349}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_L.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -333,7 +333,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5484978731257524128}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -365,7 +365,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3666749072922366539}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Arm_L.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590860038711729698}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +428,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3206934098300039878}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2355943740642696851}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +492,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2888567574498652581}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,7 +524,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6021486500100371222}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,6 +546,100 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3206934098300039878}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2339736044724735354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9208343470082285606}
+  - component: {fileID: 4854301573892501891}
+  m_Layer: 6
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9208343470082285606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339736044724735354}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.1468267, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6433326411384731328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &4854301573892501891
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339736044724735354}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 0.38385588, b: 0, a: 1}
+  m_Intensity: 8
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &2559993950014653822
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,7 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4072011328671651452}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_L.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -587,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7094132736636769868}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4647913469163889729}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Eye_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -650,7 +744,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8719050974404370038}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -682,7 +776,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5418793219686364171}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -713,7 +807,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2474717042130244516}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ears_L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -744,7 +838,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1650346257231751763}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Arm_R.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -776,7 +870,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 219749334913617625}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -808,7 +902,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6340255347568567172}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -843,7 +937,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2289023536218307520}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +969,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 126208986400670861}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -907,7 +1001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7499079993548196066}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -938,7 +1032,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 576022196971650751}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -969,7 +1063,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4031885722342902341}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1001,7 +1095,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8500010446250713131}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1033,7 +1127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3114797122639734955}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Eye_R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1162,7 @@ GameObject:
   - component: {fileID: 7934080962323499684}
   - component: {fileID: 4581237715474643703}
   - component: {fileID: 4875565735461014051}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: GoatEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1090,6 +1184,7 @@ Transform:
   m_Children:
   - {fileID: 2914091956057257155}
   - {fileID: 535270226109693461}
+  - {fileID: 9208343470082285606}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &6037099001019396007
@@ -1125,10 +1220,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106a67f2ab1a801419094e1dd278c1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8.2
-  health: 10
-  damage: 1
-  minDistance: 3.84
+  speed: 6
+  health: 15
+  damage: 15
+  minDistance: 3.96
   attackDistance: 5.08
   attackRate: 0.3
   deathEffect: {fileID: 3548588485384254794, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
@@ -1189,7 +1284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2462796270039442204}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1221,7 +1316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6945862039482341481}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Spine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1253,7 +1348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8828570020480263163}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Arm_L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1285,7 +1380,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4157331259800078737}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_R.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1317,7 +1412,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5624578678790344177}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Arm_R.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1349,7 +1444,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4166938958823779342}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1380,7 +1475,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8635725231474530152}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1415,7 +1510,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 191141471379916877}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1446,7 +1541,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6082095508331813532}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Spine.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1480,7 +1575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8132356042321932977}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ears_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1511,7 +1606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3902644657132316299}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Spine.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1543,7 +1638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2581920739021776780}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Ears_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1574,7 +1669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2914091956057257155}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: GoatEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1606,7 +1701,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3390667322649048977}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Main
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1640,7 +1735,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037958184438333149}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1671,7 +1766,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5056729797901040095}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Leg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1704,7 +1799,7 @@ GameObject:
   m_Component:
   - component: {fileID: 535270226109693461}
   - component: {fileID: 5825593017322919568}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: GoatModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1839,7 +1934,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8075969578071464368}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Eye_L.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1870,7 +1965,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2524979913677749362}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Eye_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1901,7 +1996,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3745836646264023580}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Palm_L.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}

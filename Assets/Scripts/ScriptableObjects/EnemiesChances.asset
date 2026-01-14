@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d4072b4a8d3a74fb9d6886c5f822c2, type: 3}
   m_Name: EnemiesChances
   m_EditorClassIdentifier: 
-  Chances: 1e0000003c000000
+  Chances: 500000004600000028000000190000002800000019000000

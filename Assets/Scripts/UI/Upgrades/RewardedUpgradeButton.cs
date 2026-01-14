@@ -9,8 +9,6 @@ namespace  Assets.Scripts.UI.Upgrades
         [SerializeField] private Gun[] guns;
         [SerializeField] private Gun rewardedGun;
 
-        private WavesManager wavesManager;
-
         private const int rewardedGunId = 2;
 
         private Gun currentGun;

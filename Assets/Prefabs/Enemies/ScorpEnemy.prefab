@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5526260119479901589}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Jaw_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5341018297472820088}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: tail.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3797446898711311168}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: bMiddleArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3890398215288558037}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mUpperArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -135,7 +135,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 608028189186672498}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mainClaw_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6664116298487181700}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mMiddleArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7012807101864818047}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: belly.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 776779369358957541}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fLowArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -266,7 +266,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6655447479583642715}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: upperClaw_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3360682850845308492}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: middleClaw_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4830347933172520345}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fUpperArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -362,7 +362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 288043128552362409}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: bLowArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6241033233038492800}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 591273291168156739}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: tail.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2757184652310634216}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mLowArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -489,7 +489,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3733450608371360407}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: tail.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -521,7 +521,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3107128906816731188}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mLowArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -552,7 +552,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1407186661673838926}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: coccyx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6039267869798165609}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: bUpperArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -617,7 +617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 745274559426376532}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mMiddleArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2131891454118836732}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: belly.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -685,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4454462017129465904}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: tail.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5819960486714483307}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fMiddleArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -749,7 +749,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7935670783312547801}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fMiddleArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -781,7 +781,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 103291386016964509}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: upperClaw_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -813,7 +813,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7097923417654833616}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: bUpperArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5148871406065608550}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mainClaw_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,7 +877,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8979546212723352054}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: jawClaw_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -912,7 +912,7 @@ GameObject:
   - component: {fileID: 922267131876284013}
   - component: {fileID: 6657672128638298142}
   - component: {fileID: 7807622124504937584}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: ScorpEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -934,6 +934,7 @@ Transform:
   m_Children:
   - {fileID: 8721820013953636050}
   - {fileID: 5593890841881538326}
+  - {fileID: 2971251194832515256}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1830994968873412045
@@ -969,12 +970,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 106a67f2ab1a801419094e1dd278c1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
-  health: 4
+  speed: 5.5
+  health: 1
   damage: 1
-  minDistance: 5.06
-  attackDistance: 5.57
-  attackRate: 0.5
+  minDistance: 5.27
+  attackDistance: 6.06
+  attackRate: 0.3
   deathEffect: {fileID: 3548588485384254794, guid: 2f9e7dc163581394da1e00b561eed65d, type: 3}
 --- !u!54 &6657672128638298142
 Rigidbody:
@@ -1033,7 +1034,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4603093265908931167}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: jawClaw_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1064,7 +1065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4057942193046670207}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: Jaw_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1096,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3503993644859373778}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: bMiddleArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1127,7 +1128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6634603505977473832}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: middleClaw_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1159,7 +1160,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5593890841881538326}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: ScorpRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1191,7 +1192,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4754522847811662579}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fUpperArm_r
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1223,7 +1224,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6615287891147440227}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: fLowArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1254,7 +1255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4020061560605519176}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: mUpperArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1286,7 +1287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1546424464086414250}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: bLowArm_l
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1318,7 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8721820013953636050}
   - component: {fileID: 1106332726927544908}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: ScorpionEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1439,7 +1440,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5431729031323206234}
-  m_Layer: 3
+  m_Layer: 6
   m_Name: tail.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1462,3 +1463,97 @@ Transform:
   - {fileID: 3733450608371360407}
   m_Father: {fileID: 4454462017129465904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9038599978602257021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2971251194832515256}
+  - component: {fileID: 2876308548175804112}
+  m_Layer: 6
+  m_Name: Point Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2971251194832515256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038599978602257021}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.036793567, y: 0.29434857, z: 0.18396786}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9020695548086144505}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!108 &2876308548175804112
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9038599978602257021}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 2
+  m_Shape: 0
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 6
+  m_Range: 10
+  m_SpotAngle: 30
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0

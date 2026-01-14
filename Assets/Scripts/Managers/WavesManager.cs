@@ -21,6 +21,9 @@ public class WavesManager : MonoBehaviour
 
     public event Action WaveEnded;
 
+    [SerializeField] private float speedMultiplier;
+    [SerializeField] private int healthMultiplier;
+
     private void Awake()
     {
         TryGetComponent(out spawnManager);
@@ -36,22 +39,30 @@ public class WavesManager : MonoBehaviour
     private void StartWave()
     {
         upgradesButtonsManager.OnUpgrade -= StartWave;
-        StartCoroutine(spawnManager.Spawn(enemiesAmount));
+        
         wavesCount++;
         wavesCountText.SetText(wavesCount.ToString());
-        if (wavesCount % 5 == 0)
+        if (wavesCount % 2 == 0)
         {
             spawnManager.AddEnemy(allEnemies);
+            StartCoroutine(spawnManager.Spawn(enemiesAmount,1,speedMultiplier));
         }
+        else if(wavesCount % 3 == 0)
+        {
+            StartCoroutine(spawnManager.Spawn(enemiesAmount, healthMultiplier, 1));
+        }
+        else
+        {
+            StartCoroutine(spawnManager.Spawn(enemiesAmount));
+        }
+
     }
 
     private void StopWave()
     {
         WaveEnded?.Invoke();
-        record.ChangeRecord(wavesCount);
-        spawnManager.AdditionalHealth += 1;
-        spawnManager.AdditionalSpeed += 0.5f;
-        enemiesAmount += 5;
+        enemiesAmount *= 2;
+        record.ChangeRecord(wavesCount);       
         upgradesButtonsManager.EnableButtons();
         upgradesButtonsManager.OnUpgrade += StartWave;
     }

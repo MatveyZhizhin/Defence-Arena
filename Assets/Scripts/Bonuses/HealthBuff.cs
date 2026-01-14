@@ -1,11 +1,13 @@
+using Assets.Scripts.Player;
+
 namespace Bonuses
 {
     public class HealthBuff: Bonus
     {
-        protected override void UseBuff()
+        protected override void UseBuff(_Player player)
         {
-            _player.CurrentHealth += _value;
-            _player.UpdateHealth();
+            player.CurrentHealth += _value;
+            player.UpdateHealth();
         }
     }
 }

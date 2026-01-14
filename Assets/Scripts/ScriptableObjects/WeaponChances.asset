@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d4072b4a8d3a74fb9d6886c5f822c2, type: 3}
   m_Name: WeaponChances
   m_EditorClassIdentifier: 
-  Chances: 50000000320000001e000000
+  Chances: 46000000320000003c000000

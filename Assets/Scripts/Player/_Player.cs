@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using YG;
@@ -18,8 +19,11 @@ namespace Assets.Scripts.Player
         [SerializeField] private TextMeshProUGUI healthText;
 
         private Rigidbody playerRigidbody;
-        private Animator animator;
+        private Animator[] animators;
         [SerializeField] private Joystick joystick;
+        [SerializeField] private GameObject shield;
+
+        private bool isInvincible;
 
         public float CurrentHealth { get => currentHealth; set => currentHealth = value; }
         public float StartHealth { get => startHealth;}
@@ -31,7 +35,7 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
-            TryGetComponent(out animator);
+            animators = GetComponentsInChildren<Animator>();
         }
 
         private void Start()
@@ -61,7 +65,10 @@ namespace Assets.Scripts.Player
         }
 
         public void TakeDamage(float damage)
-        {           
+        {
+            if (isInvincible)
+                return;
+
             currentHealth -= damage;
             if (damage > currentHealth)
             {
@@ -76,6 +83,21 @@ namespace Assets.Scripts.Player
             }
         }
 
+        public IEnumerator MakeInvincible(float duration)
+        {
+            isInvincible = true;
+            shield.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            shield.SetActive(false);
+            isInvincible = false;
+        }
+
+        public IEnumerator AddDamageTemporarily(float damage, float duration)
+        {
+            Damage += damage;
+            yield return new WaitForSeconds(duration);
+            Damage -= damage;
+        }
 
         private void Move()
         {
@@ -93,15 +115,15 @@ namespace Assets.Scripts.Player
             
             if (movement != new Vector3(0f, 0f, 0f))
             {
-                animator.SetBool("isRunning", true);
+                GetActiveAnimator().SetBool("isRunning", true);
             }
             else
             {
-                animator.SetBool("isRunning", false);
+                GetActiveAnimator().SetBool("isRunning", false);
             }
 
             playerRigidbody.velocity = movement * speed;
-            transform.LookAt(-movement + transform.position);
+            transform.LookAt(movement + transform.position);
         }
 
         private void Revive(int id)
@@ -112,6 +134,16 @@ namespace Assets.Scripts.Player
                 healthText.SetText(currentHealth.ToString());
                 OnPlayerRevive?.Invoke();
             }          
+        }
+
+        private Animator GetActiveAnimator()
+        {
+            foreach (var animator in animators)
+            {
+                if (animator.gameObject.activeInHierarchy)
+                    return animator;
+            }
+            return null;
         }
     }
 }

@@ -4,7 +4,7 @@ public class CameraShakeController : MonoBehaviour
 {
     [SerializeField] private Animator _cameraAnimator;
 
-    private bool _isCameraShakeEnabled;
+    private bool _isCameraShakeEnabled = false;
 
     public void ToggleCameraShake(bool toggle)
     {

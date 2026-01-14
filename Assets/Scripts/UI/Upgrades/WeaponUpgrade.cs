@@ -24,7 +24,8 @@ namespace Assets.Scripts.UI.Upgrades
                     if (newWeapon == weapon)
                     {
                         GenerateButton();
-                    }                   
+                    }
+                    break;
                 }
             }
 

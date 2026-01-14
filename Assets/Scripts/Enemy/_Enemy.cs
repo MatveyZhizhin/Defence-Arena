@@ -85,14 +85,14 @@ namespace Assets.Scripts.Enemy
             Gizmos.DrawWireSphere(transform.position, attackDistance);
         }
 
-        public void AddHealth(int health)
+        public void IncreaseHealth(int health)
         {
-            this.health += health;
+            this.health *= health;
         }
 
-        public void AddSpeed(float speed)
+        public void IncreaseSpeed(float speed)
         {
-            this.speed += speed;
+            this.speed *= speed;
         }
     }
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d4072b4a8d3a74fb9d6886c5f822c2, type: 3}
   m_Name: StatsChances
   m_EditorClassIdentifier: 
-  Chances: 140000003200000050000000
+  Chances: 3c0000003200000046000000

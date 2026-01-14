@@ -1,51 +1,46 @@
-using Assets.Scripts.UI;
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
-namespace Assets.Scripts
+public class Timer : MonoBehaviour
 {
-    public class Timer : MonoBehaviour
+    [SerializeField] private float _updateTime;
+    private float _time;
+
+    public event Action Started;
+    public event Action<float> Updated;
+    public event Action Ended;
+
+    [SerializeField] private UnityEvent _onTimerEnd;
+    [SerializeField] private UnityEvent _onTimerStart;
+
+    private IEnumerator ChangeTime(float time)
     {
-        [SerializeField] private float _startTime;
-        private float _time;
+        _time = time;
 
-        private bool _isStarted;
-
-        public event Action Started;
-        public event Action<float> Updated;
-        public event Action Ended;
-
-        private void Start()
+        while (_time > 0)
         {
-            _time = _startTime;
+            yield return new WaitForSecondsRealtime(_updateTime);
+            _time -= _updateTime;
+            Updated?.Invoke(_time / time);
         }
 
-        private void Update()
-        {
-            if (_isStarted)
-            {
-                if (_time <= 0)
-                {
-                    EndTimer();
-                    _time = _startTime;
-                }
-                else
-                {
-                    _time -= Time.deltaTime;
-                    Updated?.Invoke(_time / _startTime);
-                }
-            }
-        }
+        EndTimer();
+        _time = time;
+    }
 
-        public void StartTimer()
-        {
-            Started?.Invoke();
-            _isStarted = true;
-        }
-        private void EndTimer()
-        {
-            Ended?.Invoke();
-            _isStarted = false;
-        }
+    public void StartTimer(float time)
+    {
+        Started?.Invoke();
+        _onTimerStart?.Invoke();
+        StartCoroutine(ChangeTime(time));
+
+    }
+    public void EndTimer()
+    {
+        Ended?.Invoke();
+        _onTimerEnd?.Invoke();
+        StopAllCoroutines();
     }
 }
