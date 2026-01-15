@@ -13,6 +13,7 @@ public class Explosion : MonoBehaviour
 
     private void OnEnable()
     {
+        _particleSystem.Stop();
         StartCoroutine(Explode());
     }
 
@@ -31,5 +32,11 @@ public class Explosion : MonoBehaviour
         }
         Destroy(_granate);
         Destroy(gameObject, 5);
+    }
+    
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, _radius);
     }
 }
