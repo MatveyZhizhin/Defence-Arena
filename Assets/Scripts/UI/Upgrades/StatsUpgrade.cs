@@ -25,7 +25,7 @@ namespace Assets.Scripts.UI.Upgrades
         protected override void GenerateButton()
         {
             stats = (Stats)Randomizer.GetRandomIndexWithChance(statsChances.Chances);
-            value = Random.Range(1, 4);
+            value = Random.Range(2, 4);
             percentText.SetText("+" + value);
             foreach (var icon in buttonIcons)
             {                

@@ -19,7 +19,7 @@ namespace Assets.Scripts.Player
         [SerializeField] private TextMeshProUGUI healthText;
 
         private Rigidbody playerRigidbody;
-        private Animator[] animators;
+        [SerializeField] private Animator[] animators;
         [SerializeField] private Joystick joystick;
         [SerializeField] private GameObject shield;
 
@@ -35,13 +35,12 @@ namespace Assets.Scripts.Player
         private void Awake()
         {
             TryGetComponent(out playerRigidbody);
-            animators = GetComponentsInChildren<Animator>();
         }
 
         private void Start()
         {
             currentHealth = startHealth;
-            healthText.SetText(currentHealth.ToString());         
+            healthText.SetText(currentHealth.ToString());
         }
 
         public void UpdateHealth()
@@ -122,7 +121,7 @@ namespace Assets.Scripts.Player
                 GetActiveAnimator().SetBool("isRunning", false);
             }
 
-            playerRigidbody.MovePosition(transform.position + movement * speed * Time.fixedDeltaTime);
+            playerRigidbody.AddForce(movement * speed);
             transform.LookAt(movement + transform.position);
         }
 
@@ -133,6 +132,7 @@ namespace Assets.Scripts.Player
                 currentHealth = startHealth;
                 healthText.SetText(currentHealth.ToString());
                 OnPlayerRevive?.Invoke();
+                StartCoroutine(MakeInvincible(2));
             }          
         }
 

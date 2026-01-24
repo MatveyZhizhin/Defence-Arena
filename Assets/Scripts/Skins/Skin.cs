@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game.Skins
+namespace Skins
 {
     public class Skin : MonoBehaviour
     {
         [SerializeField] private bool _isBought;
         [SerializeField] private bool _isSelected;
+        [SerializeField] private string _name;
+
+        public string Name => _name;
 
         public UnityEvent OnSkinPurchase;
         public UnityEvent OnSkinSelection;
@@ -18,15 +21,13 @@ namespace Game.Skins
         {
             _isSelected = true;
             gameObject.SetActive(true);
-            OnSkinSelection.Invoke();
+            OnSkinSelection?.Invoke();
         }
 
         public void Remove()
         {
             _isSelected = false;
             gameObject.SetActive(false);
-            if(_isBought)
-                OnSkinPurchase?.Invoke();
         }
 
         public void Buy()

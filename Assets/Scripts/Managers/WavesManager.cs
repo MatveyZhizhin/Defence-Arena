@@ -4,10 +4,12 @@ using TMPro;
 using UnityEngine;
 using Assets.Scripts.Player;
 using System;
+using System.Collections.Generic;
+using YG;
 
 public class WavesManager : MonoBehaviour
 {
-    [SerializeField] private _Enemy[] allEnemies;
+    [SerializeField] private List<_Enemy> allEnemies;
     [SerializeField] private int enemiesAmount;
 
     private int wavesCount;
@@ -21,8 +23,11 @@ public class WavesManager : MonoBehaviour
 
     public event Action WaveEnded;
 
-    [SerializeField] private float speedMultiplier;
-    [SerializeField] private int healthMultiplier;
+    [SerializeField] private float startSpeedMultiplier;
+    [SerializeField] private int startHealthMultiplier;
+
+    private float speedMultiplier = 1;
+    private int healthMultiplier = 1;
 
     private void Awake()
     {
@@ -44,18 +49,17 @@ public class WavesManager : MonoBehaviour
         wavesCountText.SetText(wavesCount.ToString());
         if (wavesCount % 2 == 0)
         {
-            spawnManager.AddEnemy(allEnemies);
-            StartCoroutine(spawnManager.Spawn(enemiesAmount,1,speedMultiplier));
+            if (allEnemies != null)
+                spawnManager.AddEnemy(ref allEnemies);
+            speedMultiplier *=  startSpeedMultiplier;
         }
-        else if(wavesCount % 3 == 0)
+        
+        if(wavesCount % 3 == 0)
         {
-            StartCoroutine(spawnManager.Spawn(enemiesAmount, healthMultiplier, 1));
-        }
-        else
-        {
-            StartCoroutine(spawnManager.Spawn(enemiesAmount));
+            healthMultiplier *= startHealthMultiplier;
         }
 
+        StartCoroutine(spawnManager.Spawn(enemiesAmount, healthMultiplier, speedMultiplier));
     }
 
     private void StopWave()
@@ -65,6 +69,7 @@ public class WavesManager : MonoBehaviour
         record.ChangeRecord(wavesCount);       
         upgradesButtonsManager.EnableButtons();
         upgradesButtonsManager.OnUpgrade += StartWave;
+        YandexGame.FullscreenShow();
     }
 
     private void OnEnable()

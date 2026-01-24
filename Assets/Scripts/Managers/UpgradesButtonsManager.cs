@@ -12,7 +12,8 @@ namespace Assets.Scripts.Managers
         [SerializeField] private UpgradeButton[] secondButton;
         [SerializeField] private UpgradeButton[] thirdButton;
         [SerializeField] private UpgradeButton[] fourthButton;
-        [SerializeField] protected RewardedUpgradeButton rewardedUpgradeButton;
+        [SerializeField] private RewardedUpgradeButton rewardedUpgradeButton;
+        [SerializeField] private GrenadeUpgradeButton grenadeUpgradeButton;
 
         public event Action OnUpgrade;
 
@@ -30,6 +31,7 @@ namespace Assets.Scripts.Managers
             currentButtons.Add(thirdButton[Random.Range(0, thirdButton.Length)]);
             currentButtons.Add(fourthButton[Random.Range(0, fourthButton.Length)]);
             currentButtons.Add(rewardedUpgradeButton);
+            currentButtons.Add(grenadeUpgradeButton);
 
             foreach (var button in currentButtons)
             {

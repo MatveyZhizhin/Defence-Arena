@@ -9,7 +9,7 @@ public class Explosion : MonoBehaviour
     [SerializeField] private float _timeBeforeTheExplosion;
     [SerializeField] private AudioSource _audioSources;
     [SerializeField] private ParticleSystem _particleSystem;
-    [SerializeField]private GameObject _granate;
+    [SerializeField] private GameObject _granate;
 
     private void OnEnable()
     {
@@ -33,7 +33,7 @@ public class Explosion : MonoBehaviour
         Destroy(_granate);
         Destroy(gameObject, 5);
     }
-    
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

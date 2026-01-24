@@ -73,6 +73,7 @@ namespace Assets.Scripts.Enemy
             else
             {
                 StopAllCoroutines();
+                enemyAnimator.StopPlayback();
                 isAttacking = false;
             }                   
         }

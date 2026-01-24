@@ -1,46 +1,42 @@
 using System;
-using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private float _updateTime;
+    [SerializeField] private float _startTime;
     private float _time;
+
+    private bool _isStarted;
 
     public event Action Started;
     public event Action<float> Updated;
     public event Action Ended;
 
-    [SerializeField] private UnityEvent _onTimerEnd;
-    [SerializeField] private UnityEvent _onTimerStart;
-
-    private IEnumerator ChangeTime(float time)
+    private void Update()
     {
-        _time = time;
-
-        while (_time > 0)
+        if (_isStarted)
         {
-            yield return new WaitForSecondsRealtime(_updateTime);
-            _time -= _updateTime;
-            Updated?.Invoke(_time / time);
+            if (_time >= _startTime)
+            {
+                EndTimer();
+                _time = 0;
+            }
+            else
+            {
+                _time += Time.deltaTime;
+                Updated?.Invoke(_time / _startTime);
+            }
         }
-
-        EndTimer();
-        _time = time;
     }
 
-    public void StartTimer(float time)
+    public void StartTimer()
     {
         Started?.Invoke();
-        _onTimerStart?.Invoke();
-        StartCoroutine(ChangeTime(time));
-
+        _isStarted = true;
     }
-    public void EndTimer()
-    {
+    private void EndTimer()
+    {      
+        _isStarted = false;
         Ended?.Invoke();
-        _onTimerEnd?.Invoke();
-        StopAllCoroutines();
     }
 }

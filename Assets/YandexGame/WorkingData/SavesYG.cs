@@ -18,9 +18,11 @@ namespace YG
 
         // Ваши сохранения
 
-        // ...
+        public int MaxRecord;
+        public bool[] IsBought = new bool[7];
+        public bool[] IsSelected = new bool[7];
 
-        public int MaxRecord = 0;
+        // ...
 
         // Поля (сохранения) можно удалять и создавать новые. При обновлении игры сохранения ломаться не должны
 
@@ -31,6 +33,9 @@ namespace YG
             // Допустим, задать значения по умолчанию для отдельных элементов массива
 
             openLevels[1] = true;
+            IsBought[0] = true;
+            IsSelected[0] = true;
+            IsBought[1] = true;
         }
     }
 }

@@ -23,16 +23,10 @@ namespace Assets.Scripts.Managers
 
         public event Action EnemiesDied;
 
-        public void AddEnemy(_Enemy[] enemies)
+        public void AddEnemy(ref List<_Enemy> enemies)
         {
-            foreach (var enemy in enemies)
-            {
-                if (enemy != currentEnemies[currentEnemies.Count - 1])
-                {
-                    currentEnemies.Add(enemy);
-                    return;
-                }
-            }
+            currentEnemies.Add(enemies[0]);
+            enemies.Remove(enemies[0]);
         }
 
         public IEnumerator Spawn(int amount, int healthMultiplier = 1, float speedMultiplier = 1)
