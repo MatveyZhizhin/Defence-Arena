@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Assets.Scripts.UI.Upgrades
 {
-    enum Stats
+    public enum Stats
     {
         Health,
         Damage,
@@ -18,6 +18,9 @@ namespace Assets.Scripts.UI.Upgrades
             
         private int value;
 
+        public Stats Stats => stats;
+        public int Value => value;
+
 
         [SerializeField] private TextMeshProUGUI percentText;
         [SerializeField] private Chance statsChances;
@@ -25,8 +28,7 @@ namespace Assets.Scripts.UI.Upgrades
         protected override void GenerateButton()
         {
             stats = (Stats)Randomizer.GetRandomIndexWithChance(statsChances.Chances);
-            value = Random.Range(2, 4);
-            percentText.SetText("+" + value);
+            GenerateValue();
             foreach (var icon in buttonIcons)
             {                
                 if (icon.name == stats.ToString())
@@ -36,6 +38,12 @@ namespace Assets.Scripts.UI.Upgrades
                     break;
                 }
             }            
+        }
+
+        public void GenerateValue()
+        {
+            value = Random.Range(2, 5);
+            percentText.SetText("+" + value);
         }
 
         protected override void DoUpgrade()

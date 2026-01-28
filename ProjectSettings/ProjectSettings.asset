@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: WuflesStudio
-  productName: HelpNubikDefendHimself
+  productName: 99Defence
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 1, g: 1, b: 1, a: 1}
@@ -133,7 +133,7 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  bundleVersion: 0.4.2
+  bundleVersion: 0.0.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -736,7 +736,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: YG_PLUGIN_YANDEX_GAME
     Standalone: YG_PLUGIN_YANDEX_GAME;YG_NEWTONSOFT_FOR_SAVES;YG_TEXT_MESH_PRO
-    WebGL: YG_PLUGIN_YANDEX_GAME
+    WebGL: YG_PLUGIN_YANDEX_GAME;YG_TEXT_MESH_PRO
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

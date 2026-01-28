@@ -32,7 +32,7 @@ namespace Assets.Scripts.Player
             {
                 MaxRecord++;
                 recordText.SetText($"Рекорд: {MaxRecord}");
-                YandexGame.NewLeaderboardScores(YandexLeaderboardName, MaxRecord);
+                YandexGame.NewLeaderboardScores(YandexLeaderboardName, newRecord);
                 saveManager.Save();
             }
         }

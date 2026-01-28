@@ -1,32 +1,32 @@
 {
-  "idSave": 261,
-  "isFirstSession": false,
-  "language": "ru",
-  "promptDone": false,
-  "money": 1,
-  "newPlayerName": "Hello!",
-  "openLevels": [
-    false,
-    true,
-    false
-  ],
-  "MaxRecord": 0,
-  "IsBought": [
-    true,
-    true,
-    false,
-    true,
-    false,
-    false,
-    false
-  ],
-  "IsSelected": [
-    false,
-    false,
-    false,
-    true,
-    false,
-    false,
-    false
-  ]
+    "idSave": 277,
+    "isFirstSession": false,
+    "language": "ru",
+    "promptDone": false,
+    "money": 1,
+    "newPlayerName": "Hello!",
+    "openLevels": [
+        false,
+        true,
+        false
+    ],
+    "MaxRecord": 7,
+    "IsBought": [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false
+    ],
+    "IsSelected": [
+        false,
+        false,
+        false,
+        false,
+        false,
+        true,
+        false
+    ]
 }

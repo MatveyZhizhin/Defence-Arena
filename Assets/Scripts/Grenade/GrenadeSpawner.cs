@@ -1,4 +1,6 @@
+using TMPro;
 using UnityEngine;
+using YG;
 
 namespace Grenade
 {
@@ -13,6 +15,12 @@ namespace Grenade
         private void Awake()
         {
             _grenadeCounter = FindObjectOfType<GrenadeCounter>();
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+                SpawnGrenade();
         }
 
         public void SpawnGrenade()

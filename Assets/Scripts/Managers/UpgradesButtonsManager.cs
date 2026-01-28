@@ -8,16 +8,9 @@ namespace Assets.Scripts.Managers
 {
     public class UpgradesButtonsManager : MonoBehaviour
     {
-        [SerializeField] private UpgradeButton[] firstButton;
-        [SerializeField] private UpgradeButton[] secondButton;
-        [SerializeField] private UpgradeButton[] thirdButton;
-        [SerializeField] private UpgradeButton[] fourthButton;
-        [SerializeField] private RewardedUpgradeButton rewardedUpgradeButton;
-        [SerializeField] private GrenadeUpgradeButton grenadeUpgradeButton;
+        [SerializeField] private List<UpgradeButton> _buttons;
 
         public event Action OnUpgrade;
-
-        private List<UpgradeButton> currentButtons = new List<UpgradeButton>();
 
         private void Update()
         {
@@ -25,33 +18,53 @@ namespace Assets.Scripts.Managers
         }
 
         public void EnableButtons()
-        {            
-            currentButtons.Add(firstButton[Random.Range(0, firstButton.Length)]);
-            currentButtons.Add(secondButton[Random.Range(0, secondButton.Length)]);
-            currentButtons.Add(thirdButton[Random.Range(0, thirdButton.Length)]);
-            currentButtons.Add(fourthButton[Random.Range(0, fourthButton.Length)]);
-            currentButtons.Add(rewardedUpgradeButton);
-            currentButtons.Add(grenadeUpgradeButton);
-
-            foreach (var button in currentButtons)
+        {
+            foreach (var button in _buttons)
             {
                 button.gameObject.SetActive(true);
             }
+            CheckValues();
         }
 
         private void DisableButtons()
         {
-            foreach (var upgrade in currentButtons)
+            foreach (var upgrade in _buttons)
             {
                 if (upgrade.IsUpgraded)
                 {
                     OnUpgrade?.Invoke();
-                    foreach (var button in currentButtons)
+                    foreach (var button in _buttons)
                     {
                         button.gameObject.SetActive(false);                       
                     }
-                    currentButtons.Clear();
                     break;
+                }
+            }
+        }
+
+        private void CheckValues()
+        {
+           List<StatsUpgrade> buttons = new();
+
+            foreach (var upgrade in _buttons)
+            {
+                if(upgrade.TryGetComponent(out StatsUpgrade statsUpgrade))
+                {
+                    buttons.Add(statsUpgrade);
+                }
+            }
+
+            for (int i = 0; i < buttons.Count; i++)
+            {
+                for (int j = i; j < buttons.Count; j++)
+                {
+                    if (buttons[i] == buttons[j])
+                        continue;
+
+                    while (buttons[i].Stats == buttons[j].Stats && buttons[i].Value == buttons[j].Value)
+                    {
+                        buttons[i].GenerateValue();
+                    } 
                 }
             }
         }

@@ -1221,7 +1221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  health: 15
+  health: 8
   damage: 15
   minDistance: 3.96
   attackDistance: 5.08

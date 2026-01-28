@@ -51,7 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _radius: 30
   _damage: 20
-  _timeBeforeTheExplosion: 4
+  _timeBeforeTheExplosion: 2
   _audioSources: {fileID: 8425753281901657151}
   _particleSystem: {fileID: 7357903830630679222}
   _granate: {fileID: 6099628126777788947}

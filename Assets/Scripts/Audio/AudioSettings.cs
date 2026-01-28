@@ -6,6 +6,11 @@ namespace Assets.Scripts.Audio
     {
         [SerializeField] private AudioSource[] _audioSources;
 
+        private void Start()
+        {
+            SetVolume(1f);
+        }
+
         public void SetVolume(float volume)
         {
             foreach (var source in _audioSources)
