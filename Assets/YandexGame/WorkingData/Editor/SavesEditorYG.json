@@ -1,5 +1,5 @@
 {
-    "idSave": 277,
+    "idSave": 282,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
@@ -10,7 +10,7 @@
         true,
         false
     ],
-    "MaxRecord": 7,
+    "MaxRecord": 12,
     "IsBought": [
         true,
         true,

@@ -43,6 +43,8 @@ public class WavesManager : MonoBehaviour
 
     private void StartWave()
     {
+        YandexGame.FullscreenShow();
+
         upgradesButtonsManager.OnUpgrade -= StartWave;
         
         wavesCount++;
@@ -69,7 +71,6 @@ public class WavesManager : MonoBehaviour
         record.ChangeRecord(wavesCount);       
         upgradesButtonsManager.EnableButtons();
         upgradesButtonsManager.OnUpgrade += StartWave;
-        YandexGame.FullscreenShow();
     }
 
     private void OnEnable()

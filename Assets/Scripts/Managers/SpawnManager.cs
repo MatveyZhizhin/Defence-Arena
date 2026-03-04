@@ -25,6 +25,9 @@ namespace Assets.Scripts.Managers
 
         public void AddEnemy(ref List<_Enemy> enemies)
         {
+            if (enemies.Count == 0)
+                return;
+
             currentEnemies.Add(enemies[0]);
             enemies.Remove(enemies[0]);
         }
